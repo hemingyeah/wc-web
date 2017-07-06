@@ -1,0 +1,32 @@
+<div class="iscs-view-left" ng-hide="viewLeft">
+    <div class="iscs-view-left-center">
+        <div class="pad10A iscs-seach-id">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="{{ 'print.templateName' | translate }}" />
+                <!-- 模板名称 -->
+                <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="event.quickSearch()"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="pad10A pad30B">
+
+            <div class="seach-btn-main">
+                <button type="submit" class="btn btn-warning" ng-click="event.search()">{{ 'base.search' | translate }}</button>
+                <!-- 查询 -->
+                <input type="text" class="btn btn-info" value="{{ 'base.save' | translate }}">
+                <!-- 保存 -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-class="{true: 'iscs-view-right', false: 'mrg0L'}[viewRight]">
+    <div class="display-table mrg10B mrg10T">
+        <iscs-button></iscs-button>
+        <!-- 按钮组 -->
+    </div>
+    <div class="table-height-lg">
+        <iscs-grid grid-config="gridOptions" grid-class="auto-height-table" no="false"></iscs-grid>
+    </div>
+</div>

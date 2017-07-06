@@ -1,0 +1,46 @@
+{
+    "comment": "仓库需求预测详情页面模拟数据",
+    "demandForecastUkid": "2365222333333333",
+    "demandForecastName": "店铺需求额1",
+    "createTime": "2016-07-28 11:00:00",
+    "demandSideName": "海边的小贝壳",
+    "sponsor": "anytao",
+    "categoryName": "服装",
+    "platformName": "淘宝",
+    "orderQty": 900,
+    "itemNum": 5000,
+    "operationName": "发货",
+    "operationCode": "",
+    "containDailyDemand": 0,
+    "reasonName": "双十一活动啊",
+    "reasonRemark": "备注",
+    "startTime": "2016-04-13 14:40:07",
+    "endTime": "2016-04-13 14:40:07",
+    "statusCode": "10",
+    "statusName": "未审核",
+    "items": [{
+        "demandForecastDetailUkid": "26599888555555555",
+        "demandForecastUkid": "2365222333333333",
+        "itemCode": "xbx00025",
+        "itemUkid": "236859565555",
+        "itemNum": 20
+    }, {
+        "demandForecastDetailUkid": "26599888555555555",
+        "demandForecastUkid": "2365222333333333",
+        "itemCode": "xbx00026",
+        "itemUkid": "236859565555",
+        "itemNum": 20
+    }, {
+        "demandForecastDetailUkid": "26599888555555555",
+        "demandForecastUkid": "2365222333333333",
+        "itemCode": "xbx00027",
+        "itemUkid": "236859565555",
+        "itemNum": 20
+    }, {
+        "demandForecastDetailUkid": "26599888555555555",
+        "demandForecastUkid": "2365222333333333",
+        "itemCode": "xbx00028",
+        "itemUkid": "236859565555",
+        "itemNum": 20
+    }]
+}

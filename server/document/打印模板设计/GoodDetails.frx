@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/09/2016 14:08:37" ReportInfo.Modified="05/09/2016 17:28:55" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <TableDataSource Name="Categories" ReferenceName="NorthWind.Categories" DataType="System.Int32" Enabled="true">
+      <Column Name="CategoryID" DataType="System.Int32"/>
+      <Column Name="CategoryName" DataType="System.String"/>
+      <Column Name="Description" DataType="System.String"/>
+      <Column Name="Picture" DataType="System.Byte[]" BindableControl="Picture"/>
+    </TableDataSource>
+    <TableDataSource Name="Products" ReferenceName="NorthWind.Products" DataType="System.Int32" Enabled="true">
+      <Column Name="ProductID" DataType="System.Int32"/>
+      <Column Name="ProductName" DataType="System.String"/>
+      <Column Name="SupplierID" DataType="System.Int32"/>
+      <Column Name="CategoryID" DataType="System.Int32"/>
+      <Column Name="QuantityPerUnit" DataType="System.String"/>
+      <Column Name="UnitPrice" DataType="System.Decimal"/>
+      <Column Name="UnitsInStock" DataType="System.Int16"/>
+      <Column Name="UnitsOnOrder" DataType="System.Int16"/>
+      <Column Name="ReorderLevel" DataType="System.Int16"/>
+      <Column Name="Discontinued" DataType="System.Boolean"/>
+      <Column Name="EAN13" DataType="System.String"/>
+    </TableDataSource>
+    <Relation Name="CategoriesProducts" ReferenceName="NorthWind.CategoriesProducts" ParentDataSource="Categories" ChildDataSource="Products" ParentColumns="CategoryID" ChildColumns="CategoryID" Enabled="true"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Top="20" Width="718.2" Height="56.7" Guides="47.25">
+      <TextObject Name="Text1" Left="217.35" Top="9.45" Width="198.45" Height="18.9" Text="商品清单" HorzAlign="Center" Font="宋体, 16pt, style=Bold"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="96.7" Width="718.2" Height="94.5">
+      <TextObject Name="Text2" Left="37.8" Top="9.45" Width="66.15" Height="18.9" Text="订单号：" HorzAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text3" Left="103.95" Top="9.45" Width="94.5" Height="18.9" Text="[OrderCode]" HorzAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text4" Left="37.8" Top="37.8" Width="85.05" Height="18.9" Text="付款时间：" HorzAlign="Center" Font="宋体, 9pt"/>
+      <DataBand Name="Data2" Top="211.2" Width="718.2" Height="207.9">
+        <TextObject Name="Text5" Left="28.35" Top="9.45" Width="113.4" Height="37.8" Text="序号" HorzAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text6" Left="170.1" Top="9.45" Width="47.25" Height="18.9" Text="图片" HorzAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text7" Left="255.15" Top="9.45" Width="94.5" Height="18.9" Text="规格编码" HorzAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text8" Left="349.65" Top="9.45" Width="94.5" Height="18.9" Text="商品编码" HorzAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text9" Left="444.15" Top="9.45" Width="94.5" Height="18.9" Text="单位" HorzAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text10" Left="538.65" Top="9.45" Width="94.5" Height="18.9" Text="规格名称" HorzAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text11" Left="28.35" Top="66.9" Width="113.4" Height="18.9" Text="[Products.ProductID]" HorzAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text12" Left="179.55" Top="76.35" Width="151.2" Height="18.9" Text="[Products.ProductName]" HorzAlign="Center" Font="宋体, 9pt"/>
+      </DataBand>
+    </DataBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="trade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="seller_nick" type="xs:string" minOccurs="0" />
+        <xs:element name="pic_path" type="xs:string" minOccurs="0" />
+        <xs:element name="payment" type="xs:string" minOccurs="0" />
+        <xs:element name="seller_rate" type="xs:string" minOccurs="0" />
+        <xs:element name="post_fee" type="xs:string" minOccurs="0" />
+        <xs:element name="consign_time" type="xs:string" minOccurs="0" />
+        <xs:element name="order_tax_fee" type="xs:string" minOccurs="0" />
+        <xs:element name="tid" type="xs:string" minOccurs="0" />
+        <xs:element name="num" type="xs:string" minOccurs="0" />
+        <xs:element name="num_iid" type="xs:string" minOccurs="0" />
+        <xs:element name="status" type="xs:string" minOccurs="0" />
+        <xs:element name="title" type="xs:string" minOccurs="0" />
+        <xs:element name="type" type="xs:string" minOccurs="0" />
+        <xs:element name="price" type="xs:string" minOccurs="0" />
+        <xs:element name="discount_fee" type="xs:string" minOccurs="0" />
+        <xs:element name="total_fee" type="xs:string" minOccurs="0" />
+        <xs:element name="created" type="xs:string" minOccurs="0" />
+        <xs:element name="pay_time" type="xs:string" minOccurs="0" />
+        <xs:element name="modified" type="xs:string" minOccurs="0" />
+        <xs:element name="end_time" type="xs:string" minOccurs="0" />
+        <xs:element name="buyer_message" type="xs:string" minOccurs="0" />
+        <xs:element name="buyer_memo" type="xs:string" minOccurs="0" />
+        <xs:element name="seller_memo" type="xs:string" minOccurs="0" />
+        <xs:element name="buyer_nick" type="xs:string" minOccurs="0" />
+        <xs:element name="shipping_type" type="xs:string" minOccurs="0" />
+        <xs:element name="adjust_fee" type="xs:string" minOccurs="0" />
+        <xs:element name="buyer_rate" type="xs:string" minOccurs="0" />
+        <xs:element name="eticket_service_addr" type="xs:string" minOccurs="0" />
+        <xs:element name="o2o_et_order_id" type="xs:string" minOccurs="0" />
+        <xs:element name="orders" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="order" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="item_meal_name" type="xs:string" minOccurs="0" />
+                    <xs:element name="outer_iid" type="xs:string" minOccurs="0" />
+                    <xs:element name="oid" type="xs:string" minOccurs="0" />
+                    <xs:element name="status" type="xs:string" minOccurs="0" />
+                    <xs:element name="title" type="xs:string" minOccurs="0" />
+                    <xs:element name="sku_id" type="xs:string" minOccurs="0" />
+                    <xs:element name="num" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="trade" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,52 @@
+<div class="container dashboard-index">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div ng-controller="dashBoardCtrl" style="height:400px;">
+                <ng-echarts class="col-md-12 echarts" ec-config="lineConfig" ec-option="lineOption"></ng-echarts>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div ng-controller="barChartController" style="height:400px;">
+                <ng-echarts class="col-md-12 echarts" ec-config="barConfig" ec-option="barOption"></ng-echarts>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div ng-controller="lineChartController" style="height:400px;">
+                <ng-echarts class="col-md-12 echarts" ec-config="lineConfig" ec-option="lineOption"></ng-echarts>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div style="height:700px;"> 
+    <div id="allmap" style="height:700px;"></div> 
+</div>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(120.374915,30.310041);
+	var marker = new BMap.Marker(point);  // 创建标注
+	map.addOverlay(marker);              // 将标注添加到地图中
+	map.centerAndZoom(point, 15);
+
+    var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+	var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+	var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); //右上角，仅包含平移和缩放按钮
+	/*缩放控件type有四种类型:
+	BMAP_NAVIGATION_CONTROL_SMALL：仅包含平移和缩放按钮；BMAP_NAVIGATION_CONTROL_PAN:仅包含平移按钮；BMAP_NAVIGATION_CONTROL_ZOOM：仅包含缩放按钮*/
+    map.addControl(top_left_control);        
+    map.addControl(top_left_navigation);     
+    map.addControl(top_right_navigation);  
+	var opts = {
+	  width : 200,     // 信息窗口宽度
+	  height: 100,     // 信息窗口高度
+	  title : "浙江网仓科技有限公司" , // 信息窗口标题
+	  enableMessage:true,//设置允许信息窗发送短息
+	  message:"亲耐滴，晚上一起吃个饭吧？戳下面的链接看下地址喔~"
+	}
+	var infoWindow = new BMap.InfoWindow("地址：杭州经济技术开发区科技园路2号新加坡杭州科技园2幢21层<br>http://www.iscs.com.cn", opts);  // 创建信息窗口对象 
+	marker.addEventListener("click", function(){          
+		map.openInfoWindow(infoWindow,point); //开启信息窗口
+	});
+</script>
+</div>-->

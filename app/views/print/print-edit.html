@@ -1,0 +1,77 @@
+<panel dialog>
+    <phead><span ng-if="!template.templateName">{{ 'print.addTemplate' | translate }}</span><!-- 新增模板 -->
+    <span ng-if="template.templateName">{{ 'print.editTemplate' | translate }}</span></phead><!-- 编辑模板 -->
+    <pbody>
+        <div class="display-table pad10A">
+            <div class="text-right line-height30 col-md-4">
+                <span class="color-8c">{{ 'print.templateName' | translate }}：</span><!-- 模板名称 -->
+            </div>
+            <div class="col-md-8 pad0L">
+                <input type="text" class="form-control" id="templateName" ng-model="template.templateName" placeholder="">
+            </div>
+            <div class="text-right col-md-4 mrg10T">
+                <span class="color-8c">{{ 'print.templateType' | translate }}：</span><!-- 模板类型 -->
+            </div>
+            <div class="col-md-8 mrg10T pad0L">
+                <ui-select ng-model="templateType.selected">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}"><!-- 请选择 -->
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (templateTypeList | filter: $select.query) track by item.id">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="text-right col-md-4 mrg10T">
+
+                <span class="color-8c">{{ 'printer.trafficUnit' | translate }}：</span><!-- 运输单位 -->
+            </div>
+            <div class="col-md-8 mrg10T pad0L">
+                <ui-select ng-model="transferUnit.selected">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}"><!-- 请选择 -->
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (transferUnitList | filter: $select.query) track by item.id">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="text-right col-md-4 mrg10T">
+                <span class="color-8c">{{ 'print.serviceProduct' | translate }}：</span><!-- 服务产品 -->
+            </div>
+            <div class="col-md-8 mrg10T pad0L">
+                <ui-select ng-model="transporterService.selected">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}"><!-- 请选择 -->
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (transporterServiceList | filter: $select.query) track by item.id">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="text-right col-md-4 mrg10T">
+                <span class="color-8c">{{ 'base.shop' | translate }}：</span><!-- 所属店铺 -->
+            </div>
+            <div class="col-md-8 mrg10T pad0L">
+               
+               <div isteven-multi-select
+                    input-model="modernBrowsers"
+                    output-model="outputBrowsers"
+                    button-label="name"
+                    item-label="maker"
+                    tick-property="ticked"
+                    ...
+                    orientation="horizontal"
+                    maxWidth="303px" >
+                </div>
+            </div>
+            
+        </div>
+    </pbody>
+    <pfoot>
+        <div style="height: 40px;" class="text-right">
+            <button class="btn btn-success" ng-click="saveTemplate()">{{ 'base.save' | translate }}</button><!-- 保存 -->
+            <button class="btn btn-default " ng-click="closeDialog()">{{ 'base.close' | translate }}</button><!-- 关闭 -->
+        </div>
+    </pfoot>
+</panel>

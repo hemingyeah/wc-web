@@ -1,0 +1,260 @@
+<div action="orderReturnAction" title="订单退换货" canclose="false" pageukid="1900102160002440" pagename="订单退换货">
+    <input type="hidden" id="withError" value="1" />
+    <div id="toolbar" type="toolbar">
+        <ul>
+            <li id="add" title="新增" icon="add" separator="true" event="click=add$click"></li>
+            <li id="edit" title="编辑" icon="edit" separator="true" event="click=edit$click"></li>
+            <li id="delete" title="删除" icon="delete" confirm="你确定要删除选中订单吗？" separator="true" event="click=delete$click"></li>
+            <li id="audit" title="审核" icon="examine" separator="true" event="click=audit$click"></li>
+            <!-- <li id="editNote" title="编辑备注" icon="note" separator='true'></li> -->
+            <li id="antiAudit" title="反审核" icon="the_audit" separator="true" confirm="你确定要反审该订单吗？" event="click=antiAudit$click"></li>
+            <li id="sureInfo" title="确认信息" icon="examine" separator="true" event="click=sureInfo$click"></li>
+            <li id="refunded" title="已退款" icon="examine" separator="true" event="click=refunded$click"></li>
+            <li id="notRefund" title="未退款" icon="the_audit" separator="true" confirm="你确定该订单未退款吗？" event="click=notRefund$click"></li>
+            <li id="sureStorage" title="入库确认" icon="examine" separator="true" event="click=sureStorage$click"></li>
+            <li id="complete" title="确认完结" icon="examine" separator="true" confirm="你确定该确认完结选中单据吗？" event="click=complete$click"></li>
+            <li id="delivery" title="立即发货" icon="submit" separator="true" confirm="你确定要立即发货吗？" event="click=delivery$click"></li>
+            <li id="jumpOrder" title="跳转订单" icon="search" event="click=jumpOrder$click"></li>
+            <li id="setIsLockInventory" title="设置占用库存" icon="the_audit" event="click=setIsLockInventory$click"></li>
+            <li id="viewReturnVideo" title="查看录像" icon="search" event="click=viewReturnVideo$click"></li>
+            <li id="traceOne" title="快递跟踪" icon="submit" event="click=traceOne$click"></li>
+        </ul>
+    </div>
+    <!-- 测试数据SR61140517000007，	SR61140729000014 -->
+    <div id="orderReturnGrid" type="grid" edit="false" query="true" height="295" sort="orderReturnUkid.desc" datefilter="createDate:30::usecount" event="selectrow=rowClick,loaddata=orderReturnGrid$loaddata">
+        <ul>
+            <li name="orderReturnNo" display="退换货单号" datatype="string"></li>
+            <li name="shopId" display="店铺Id" datatype="string" width="80" butype="8"></li>
+            <li name="shopName" display="关联店铺" datatype="string" showtitle="true" issort="false"></li>
+            <li name="orderReturnStatus" display="审核状态" datatype="code" codekey="OrderReturnStatus"></li>
+            <li name="warehouseStatus" display="入库状态" datatype="code" codekey="WarehouseStatus"></li>
+            <li name="fastHand" display="是否快速销退" datatype="code" codekey="YesOrNo" issort="false"></li>
+            <li name="orderReturnType" display="退换货类型" datatype="code" codekey="OrderReturnType"></li>
+            <li name="orderNo" display="原销售单号" datatype="string"></li>
+            <li name="newOrderNo" display="新发货单号" datatype="string"></li>
+            <li name="returnStockName" display="退入仓库" datatype="string"></li>
+            <li name="tids" display="来源单号" datatype="string"></li>
+            <li name="createDate" display="新增时间" datatype="datetime"></li>
+            <li name="auditDate" display="审核时间" datatype="datetime"></li>
+            <li name="receiptDate" display="退货处理时间" datatype="datetime"></li>
+            <li name="instockDate" display="确认入库时间" datatype="datetime"></li>
+            <li name="isComplete" display="是否完结" datatype="code" codekey="YesOrNo"></li>
+            <li name="completeTime" display="完结时间" datatype="datetime"></li>
+            <li name="buyerNick" display="买家昵称" datatype="string"></li>
+            <li name="buyerGrade" display="会员等级" datatype="code" codekey="BuyerGrade"></li>
+            <li name="responsibleParty" display="责任方" datatype="code" codekey="ResponsibleParty"></li>
+            <li name="verifyResponsibleParty" display="确认责任方" datatype="code" codekey="ResponsibleParty"></li>
+            <li name="needRefund" display="需要退款" datatype="code" codekey="YesOrNo" issort="false"></li>
+            <li name="isRefund" display="是否已退款" datatype="code" codekey="YesOrNo" issort="false"></li>
+            <li name="sendTransporterName" display="发出快递" datatype="string" issort="false"></li>
+            <li name="refundFee" display="退款金额" datatype="number"></li>
+            <li name="receiverName" display="收货人" datatype="string" issort="true"></li>
+            <li name="receiverMobile" display="收货人电话" datatype="string"></li>
+            <li name="transporterName" display="退货快递" datatype="string"></li>
+            <li name="outSid" display="退货快递单号" datatype="string" issort="true"></li>
+            <li name="returnReasonName" display="退换货原因" datatype="string"></li>
+            <li name="returnDesc" display="退款说明" datatype="string"></li>
+            <li name="createUserName" display="创建人" datatype="string"></li>
+            <li name="updateUserName" display="更新人" datatype="string"></li>
+            <li name="returnNote" display="备注" datatype="string"></li>
+            <li name="cofcoReturnId" display="平台退货单号" datatype="string"></li>
+            <li name="platformReturnGuid" display="平台退货单主键" datatype="string"></li>
+            <li name="notifyStatus" display="退货确认" datatype="code" codekey="YesOrNo" issort="true"></li>
+            <li name="orderReturnUkid" display="退换货主键" datatype="string"></li>
+            <li name="productCodesInfo" display="条码" datatype="string"></li>
+            <li name="differencesQty" display="是否有差异" datatype="code" codekey="YesOrNo" issort="true"></li>
+            <li name="isLockInventory" display="占用库存" datatype="code" codekey="YesOrNo" issort="true"></li>
+            <li name="inventoryStatus" display="库存状态" datatype="code" codekey="YesOrNo" issort="true"></li>
+            <li name="flowStatus" display="物流流转状态" datatype="code" codekey="ShipmentOrderStatus"></li>
+            <li name="orderCreateTime" display="拍单时间" datatype="datetime"></li>
+            <li name="orderPayTime" display="付款时间" datatype="datetime"></li>
+            <li name="shipDate" display="原订单发货时间" datatype="datetime"></li>
+            <li name="auditUserName" display="审核人" datatype="string"></li>
+            <li name="prime" display="专享服务" datatype="code" codekey="YesOrNo"></li>
+        </ul>
+    </div>
+    <div type="tab">
+        <div title="基本信息" canclose="false">
+            <table style="line-height:30px;margin-left:10px;">
+                <tbody>
+                    <tr>
+                        <td>退换货单号:</td>
+                        <td width="160"><input type="text" id="vOrderReturnNo" readonly="readOnly" width="120" /></td>
+                        <td>关联店铺:</td>
+                        <td width="160"><input type="text" id="vShopName" readonly="readOnly" width="120" /></td>
+                        <td>退货快递单号:</td>
+                        <td width="160"><input type="text" id="vOutSid" readonly="readOnly" width="120" /></td>
+                        <td>审核状态:</td>
+                        <td><input type="text" id="auditStatus" datatype="code" codekey="auditStatus" readonly="readOnly" disabled="disabled" width="120" /></td>
+                        <td>入库状态:</td>
+                        <td><input type="text" id="warehouseStatus" datatype="code" codekey="WarehouseStatus" readonly="readOnly" disabled="disabled" width="120" /></td>
+                    </tr>
+                    <tr>
+                        <td>原销售单号:</td>
+                        <td><input type="text" id="vBaOrderNo" readonly="readOnly" width="120" /></td>
+                        <td>新发货单号:</td>
+                        <td><input type="text" id="vNewOrderNo" readonly="readOnly" width="120" /></td>
+                        <td>退换货类型:</td>
+                        <td><input type="text" id="orderReturnType" datatype="code" codekey="OrderReturnType" readonly="readOnly" disabled="disabled" width="120" event="change=orderReturnType$change" /></td>
+                        <td>退换货原因:</td>
+                        <td><input type="text" id="returnReasonName" datatype="string" readonly="readOnly" disabled="disabled" width="120" event="search=returnReasonName$search" /></td>
+                    </tr>
+                    <tr>
+                        <td>退入仓库:</td>
+                        <td><input type="text" id="vReturnStockName" readonly="readOnly" width="120" /></td>
+                        <td>买家昵称:</td>
+                        <td><input type="text" id="vBuyerNick" readonly="readOnly" width="120" /></td>
+                        <td>责任方:</td>
+                        <td><input type="text" id="responsibleParty" datatype="code" codekey="ResponsibleParty" readonly="readOnly" disabled="disabled" width="120" event="change=responsibleParty$change" /></td>
+                        <td>确认责任方:</td>
+                        <td><input type="text" id="verifyResponsibleParty" datatype="code" codekey="ResponsibleParty" readonly="readOnly" disabled="disabled" width="120" /></td>
+                    </tr>
+                    <tr>
+                        <td>退货快递:</td>
+                        <td><input type="text" id="vBaTransporterName" readonly="readOnly" width="120" /></td>
+                        <td>是否已退款:</td>
+                        <td>&nbsp;<label id="vIsRefund"></label></td>
+                        <td>来源单号:</td>
+                        <td><input type="text" id="tids" readonly="readOnly" width="120" /></td>
+                        <td>退款金额:</td>
+                        <td><input type="text" id="refundFee" readonly="readOnly" width="120" /></td>
+                    </tr>
+                    <tr>
+                        <td>收货人:</td>
+                        <td><input type="text" id="vReceiverName" readonly="readOnly" width="120" /></td>
+                        <td>收货人手机号:</td>
+                        <td><input type="text" id="vReceiverMobile" readonly="readOnly" width="120" /></td>
+                        <td>收货人固话:</td>
+                        <td><input type="text" id="vReceiverPhone" readonly="readOnly" width="120" /></td>
+                    </tr>
+                    <tr>
+                        <td>省</td>
+                        <td><input type="text" id="vReceiverProvince" readonly="readOnly" width="120" /></td>
+                        <td>市</td>
+                        <td><input type="text" id="vReceiverCity" readonly="readOnly" width="120" /></td>
+                        <td>区</td>
+                        <td><input type="text" id="vReceiverCounty" readonly="readOnly" width="120" /></td>
+                    </tr>
+                    <tr>
+                        <td>地址:</td>
+                        <td colspan="3"><textarea rows="3" cols="54" id="vReceiverAddress" value="" readonly="readonly"></textarea></td>
+                        <td>备注:</td>
+                        <td colspan="3"><textarea rows="3" cols="54" id="vReturnNote" value="" readonly="readonly"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div title="退入商品明细" canclose="false">
+            <div id="returnedProduct" type="grid" edit="false" filter="false" usepager="false" delayload="true" query="false" height="209" event="loaddata=returnedProduct$loaddata">
+                <ul>
+                    <li name="productCode" display="商品条码" datatype="string"></li>
+                    <li name="productTitle" display="商品名称" datatype="string"></li>
+                    <li name="productId" display="商品编码" datatype="string"></li>
+                    <li name="skuId" display="规格编码" datatype="string"></li>
+                    <li name="skuName" display="规格名称" datatype="string"></li>
+                    <li name="qty" display="计划退回数量" datatype="number" width="80"></li>
+                    <li name="programId" display="已登记数量" datatype="number" width="80"></li>
+                    <li name="sellPrice" display="单价" datatype="number" width="80"></li>
+                    <li name="totalFee" display="交易总金额" datatype="number"></li>
+                    <li name="payment" display="实收金额" datatype="number" width="80"></li>
+                    <li name="discountFee" display="优惠金额" datatype="number" width="80"></li>
+                    <li name="refundFee" display="退款金额" datatype="number" width="80"></li>
+                    <li name="refundId" display="平台退款单号" datatype="string"></li>
+                    <li name="receiptQty" display="实际收货数" datatype="number" issort="false"></li>
+                    <li name="qualifiedQty" display="实际合格数" datatype="number" issort="false"></li>
+                    <li name="unqualifiedQty" display="实际不合格数" datatype="number" issort="false"></li>
+                    <li name="differencesQty" display="是否有差异" datatype="code" codekey="YesOrNo" issort="true"></li>
+                    <li name="returnOriginType" display="商品来源" datatype="code" codekey="ReturnOriginType"></li>
+                </ul>
+            </div>
+        </div>
+        <div title="换出商品明细" canclose="false">
+            <div id="swappedOutProduct" type="grid" edit="false" filter="false" usepager="false" delayload="true" query="false" height="209" event="loaddata=swappedOutProduct$loaddata">
+                <ul>
+                    <li name="productCode" display="商品条码" datatype="string"></li>
+                    <li name="productTitle" display="商品名称" datatype="string"></li>
+                    <li name="productId" display="商品编码" datatype="string"></li>
+                    <li name="qty" display="数量" datatype="number" width="50"></li>
+                    <li name="sellPrice" display="单价" datatype="number" width="80"></li>
+                    <li name="totalFee" display="总金额" datatype="number" width="80"></li>
+                    <li name="payment" display="实付金额" datatype="number" width="80"></li>
+                    <li name="discountFee" display="优惠金额" datatype="number" width="80"></li>
+                </ul>
+            </div>
+        </div>
+        <div title="锁定仓库库存" canclose="false">
+            <div id="stockInventoryLockGrid" type="grid" edit="false" usepager="false" delayload="true" sort="dateUpdated.asc" event="loaddata=stockInventoryLockGrid$loaddata">
+                <ul>
+                    <li name="productCode" display="条码" datatype="string"></li>
+                    <li name="productTitle" display="商品名称" datatype="string" showtitle="true"></li>
+                    <li name="skuName" display="规格" datatype="string" width="150" showtitle="true"></li>
+                    <li name="lockQty" display="锁定数量" datatype="number"></li>
+                    <li name="assignedQty" display="分配数量" datatype="number"></li>
+                    <li name="relatedOrderNo" display="关联单据" datatype="string"></li>
+                    <li name="ownerName" display="货主" datatype="string"></li>
+                    <li name="relatedType" display="关联单据类型" datatype="code" codekey="RelatedType"></li>
+                    <li name="lockType" display="锁定类型" datatype="code" codekey="LockType"></li>
+                    <li name="autoUnlockTime" display="自动解锁时间" datatype="datetime"></li>
+                    <li name="userIdUpdated" display="修改用户" datatype="string"></li>
+                    <li name="dateUpdated" display="修改时间" datatype="datetime"></li>
+                </ul>
+            </div>
+        </div>
+        <div title="原收货人信息" canclose="false">
+            <table style="line-height:30px;margin-left:10px;">
+                <tbody>
+                    <tr>
+                        <td>姓名:</td>
+                        <td width="160"><input type="text" id="receiverName" value="" readonly="readonly" /></td>
+                        <td>手机:</td>
+                        <td width="160"><input type="text" id="receiverMobile" value="" readonly="readonly" /></td>
+                        <td>电话:</td>
+                        <td width="160"><input type="text" id="receiverPhone" value="" readonly="readonly" /></td>
+                    </tr>
+                    <tr>
+                        <td>省:</td>
+                        <td><input type="text" id="receiverProvince" value="" readonly="readonly" event="change=receiverProvince$change" /></td>
+                        <td>市:</td>
+                        <td><input type="text" id="receiverCity" value="" readonly="readonly" event="change=receiverCity$change" /></td>
+                        <td>区:</td>
+                        <td><input type="text" id="receiverCounty" value="" readonly="readonly" /></td>
+                    </tr>
+                    <tr>
+                        <td>地址:</td>
+                        <td colspan="5"><input type="text" id="receiverAddress" value="" readonly="readonly" width="485" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div title="附件" canclose="false">
+            <div id="attachmentGrid" type="grid" edit="false" filter="false" usepager="true" delayload="true" query="false" height="209">
+                <ul>
+                    <li name="attachmentUkid" display="编号" datatype="string" issort="false"></li>
+                    <li name="relativeUrl" display="图片" datatype="img" edit="true" issort="false"></li>
+                </ul>
+            </div>
+        </div>
+        <div title="快递追踪" canclose="false">
+            <div id="shipmentTrackGrid" type="grid" edit="false" filter="false" usepager="false" height="209" delayload="true" query="false" sort="operationDate.desc" event="loaddata=shipmentTrackGrid$loaddata">
+                <ul>
+                    <li name="operationDate" display="操作时间" datatype="datetime"></li>
+                    <li name="flowStatus" display="快递流转状态" datatype="code" codekey="ShipmentOrderStatus"></li>
+                    <li name="operationRemark" display="操作备注" datatype="string" showtitle="true" width="250"></li>
+                    <li name="operationAddress" display="操作地址" datatype="string" showtitle="true" width="250"></li>
+                    <li name="dateUpdated" display="更新时间" datatype="datetime"></li>
+                </ul>
+            </div>
+        </div>
+        <div title="操作记录" canclose="false">
+            <div id="operationLogGrid" type="grid" edit="false" filter="false" usepager="true" delayload="true" query="false" height="209" sort="logDate.asc" event="loaddata=operationLogGrid$loaddata">
+                <ul>
+                    <li name="operationName" display="操作名称" datatype="string"></li>
+                    <li name="logUserId" display="操作人ID" datatype="string"></li>
+                    <li name="logUserName" display="操作人" datatype="string"></li>
+                    <li name="logDate" display="操作时间" datatype="datetime"></li>
+                    <li name="logRemark" display="备注" datatype="string" width="500"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

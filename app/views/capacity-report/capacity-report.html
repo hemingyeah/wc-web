@@ -1,0 +1,42 @@
+<div class="container dashboard-index">
+	<div class="row mrg20T">
+		<div class="col-md-3" style="margin-right:10px;">
+			<button class="btn btn-default pull-right mrg5L" ng-click="event.getCapacityInThirty($event)">未来30天</button>
+			<button class="btn btn-default pull-right mrg5L" ng-click="event.getCapacityInSeven($event)">未来7天</button>
+		</div>
+	    <div class="col-md-3" style="padding: 0px;">
+	    	<adm-dtp ng-model="model.timeFrom" on-open="event.open()" class="pull-right" options='{format: "YYYY-MM-DD", freezeInput: true}'
+	    		mixdate="{{model.initDate}}">
+	    		<input class="form-control width-240" type='text' ng-model='model.timeFrom' dtp-input readonly="readonly" style="cursor: pointer;" />
+	    	</adm-dtp>
+	    </div>
+	    <div class="col-md-2" style="font-size:14px;text-align: center;width:40px;line-height: 32px;">
+	    	~
+	    </div>
+	    <div class="col-md-3" style="padding: 0px;">
+	    	<adm-dtp ng-model='model.timeTo' on-open="event.open()" options='{format: "YYYY-MM-DD", freezeInput: true}' maxdate="">
+	    		<input class="form-control width-240" type='text' ng-model='model.timeTo' dtp-input readonly="readonly" style="cursor: pointer;"/>
+	    	</adm-dtp>
+	    </div>
+	    <div class="col-md-1">
+	    	<button class="btn btn-default" ng-click="event.search()">查询</button>
+	    </div>
+	</div>
+	<div class="row">
+		<div class="col-md-3" style="margin:15px 0px 20px 0px;">
+			<label class="radio-inline c-radio" style="float:right;">
+			    <input type="radio"  name="i-radio" value="单" ng-model="model.search" ng-click="event.getCapacityReportByOrder()">
+			    <span class="fa fa-check"></span>单量
+		    </label>
+			<label class="radio-inline c-radio" style="float:right;">
+			    <input type="radio"  name="i-radio" value="件" ng-model="model.search" ng-click="event.getCapacityReportByNum()">
+			    <span class="fa fa-check" ng-click="event.getCapacityReportByNum()"></span>件数
+		    </label>
+		</div>
+	</div>
+
+	<div class="row" style="height: 400px;">
+		<ng-echarts class="col-md-12 echarts" ec-config="lineConfig" ec-option="lineOption"></ng-echarts>
+	</div>
+
+</div>

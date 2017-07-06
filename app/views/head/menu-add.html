@@ -1,0 +1,20 @@
+<panel dialog>
+    <phead><span>{{ 'base.addMenu' | translate }}</span></phead><!-- 添加菜单 -->
+    <pbody>
+        <div class="form-group selected-view">
+            
+			<select ng-model="selectedDistrict" ng-change="selectedUnit=''" ng-options="district.pageName for district in districts" >
+			    <option value="">请选择一级</option>
+			</select>
+			<select ng-model="selectedUnit" ng-change="itemVaule(selectedUnit)" ng-options="item.pageName for item in selectedDistrict.items">
+			    <option value="">请选择二级</option>
+			</select>
+       </div>
+    </pbody>
+    <pfoot>
+        <div>
+            <button class="btn btn-success" type="button" ng-click="submit(item)">{{ 'base.save' | translate }}</button><!-- 保存 -->
+            <button class="btn btn-default" type="button" ng-click="cancel()">{{ 'base.close' | translate }}</button><!-- 关闭 -->
+        </div>
+    </pfoot>
+</panel>

@@ -1,0 +1,144 @@
+<div style="overflow: auto;height: 100%;">
+    <button type="file" ngf-select="uploadFiles($file, $invalidFiles)" class="uploader" accept="image/*" ngf-max-height="2000" ngf-max-size="2MB">选择文件</button>
+    <br><br>图片预览:
+    <div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+        <span class="progress" ng-show="f.progress >= 0">
+          <div style="width:{{f.progress}}%" ng-bind="f.progress + '%'"></div>
+      </span>
+        <img ng-src="{{callSrc}}" width="400" height="300" alt="显示上传成功的图片" />
+    </div>
+    <uib-tabset active="activeForm" class="pad10T">
+        <uib-tab index="1" heading="操作记录">
+            <div style="width: 700px;">
+                <panel dialog>
+                    <phead><span>编辑个人信息</span></phead>
+                    <pbody>
+                        <form name="userForm" novalidate>
+                            <!-- NAME  ng-pattern="/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/" -->
+                            <!-- 姓名验证 -->
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="textzh" ng-model="user.textzh" required ng-pattern="/^[\u4e00-\u9fa5]+$/" placeholder="只限中文" />
+                                <span class="error" ng-show="userForm.textzh.$dirty && userForm.textzh.$invalid && !(userForm.textzh.$error.required)">请输入中文</span>
+                                <span class="error" ng-show="userForm.textzh.$dirty && userForm.textzh.$error.required">不能为空</span>
+                            </div>
+                            <!-- 英文验证 -->
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="texten" ng-model="user.texten" required ng-pattern="/^[A-Za-z]+$/" placeholder="只限英文" />
+                                <span class="error" ng-show="userForm.texten.$dirty && userForm.texten.$invalid && !(userForm.texten.$error.required)">请输入英文</span>
+                                <span class="error" ng-show="userForm.texten.$dirty && userForm.texten.$error.required">不能为空</span>
+                            </div>
+                            <!-- 邮箱验证 -->
+                            <div class="form-group">
+                                <input class="form-control" type="email" name="email" ng-model="user.email" placeholder="请输入邮箱" required />
+                                <span class="error" ng-show="userForm.email.$dirty && userForm.email.$invalid && !(userForm.email.$error.required)">邮件格式错误</span>
+                                <span class="error" ng-show="userForm.email.$dirty && userForm.email.$error.required">不能为空</span>
+                            </div>
+                            <!-- 字符验证 -->
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="name" ng-model="user.name" placeholder="请输入5-20个字符" required ng-minlength="5" ng-maxlength="20" />
+                                <span class="error" ng-show="userForm.name.$dirty && userForm.name.$invalid && !(userForm.name.$error.required)">5-20字符</span>
+                                <span class="error" ng-show="userForm.name.$dirty && userForm.name.$error.required">不能为空</span>
+                            </div>
+                            <!-- 手机号码验证 -->
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="phone" ng-model="user.phone" placeholder="请输入手机号码" required ng-pattern="/^((\(\d{3}\))|(\d{3}\-))?1[3|4|5|6|7|8|9][0-9]\d{8}$/" />
+                                <span class="error" ng-show="userForm.phone.$dirty && userForm.phone.$invalid && !(userForm.phone.$error.required)">请输入正确的手机号码</span>
+                                <span class="error" ng-show="userForm.phone.$dirty && userForm.phone.$error.required">不能为空</span>
+                            </div>
+                            <!-- 邮编验证 -->
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="postcode" ng-model="user.postcode" placeholder="请输入邮编" required ng-pattern="/[1-9]\d{5}(?!\d)/" />
+                                <span class="error" ng-show="userForm.postcode.$dirty && userForm.postcode.$invalid && !(userForm.postcode.$error.required)">请输入正确的邮编</span>
+                                <span class="error" ng-show="userForm.postcode.$dirty && userForm.postcode.$error.required">不能为空</span>
+                            </div>
+                            <!-- 密码验证 -->
+                            <div class="form-group">
+                                <input type="password" placeholder="请输入新密码" ng-model="user.password" name="password" class="form-control" required/>
+                                <span class="error" ng-show="userForm.password.$dirty && userForm.password.$error.required">不能为空</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="repeatPassword" class="form-control" placeholder="请再次输入密码" ng-model="user.repeatPassword" repeat-password="password" required>
+                                <span class="text-error" ng-show="userForm.repeatPassword.$dirty && user.password != user.repeatPassword">输入密码不正确!</span>
+                                <span class="error" ng-show="userForm.repeatPassword.$dirty && userForm.repeatPassword.$error.required">不能为空</span>
+                            </div>
+                            <!-- 数字 -->
+                            <div class="form-group">
+                                <input type="number" name="number" class="form-control" ng-model="user.number" required ng-minlength="3" ng-maxlength="8" placeholder="请输入3-8位数字" required/>
+                                <span class="error" ng-show="userForm.number.$dirty && userForm.number.$error.required">不能为空</span>
+                            </div>
+                            <!-- 日期 -->
+                            <div class="form-group">
+                                <div datepick>
+                                    <adm-dtp ng-model='query.orderPayTimeFrom' required></adm-dtp>
+                                </div>
+                            </div>
+                            <!-- 下拉列表 -->
+                            <div>fda{{selected.val}}</div>
+                            <div class="form-group">
+                                <ui-select ng-model="selected.val">
+                                    <ui-select-match placeholder="请选择">
+                                        <span ng-bind="$select.selected.name"></span>
+                                    </ui-select-match>
+                                    <ui-select-choices repeat="item in (exampleData | filter: $select.query) track by item.id">
+                                        <span ng-bind="item.name"></span>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                            <!-- 地址 -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <select class="form-control" ng-model="user.province" ng-options="province.label for province in user.provinces">
+                                        <option value="">-- 请选择省份 --</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <select class="form-control" ng-model="user.city" ng-options="city.label for city in user.province.citys">
+                                        <option value="">-- 请选择市 --</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <select class="form-control" ng-model="user.area" ng-options="area.label for area in user.city.areas">
+                                        <option value="">-- 请选择区--</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- SUBMIT BUTTON -->
+                            <button type="submit" ng-click="submit(userForm)" class="btn btn-primary" ng-disabled="userForm.$invalid">提交
+                            </button>
+                        </form>
+                    </pbody>
+                    <pfoot>
+                        <div style="height: 40px;" class="text-right">
+                            <button class="btn btn-success" ng-click="event.save($scope)">保存</button>
+                            <!-- 保存 -->
+                            <button class="btn btn-default " ng-click="event.close($scope)">关闭</button>
+                            <!-- 关闭 -->
+                        </div>
+                    </pfoot>
+                </panel>
+            </div>
+            <br>
+        </uib-tab>
+
+        <uib-tab index="0" heading="Form Tab">
+            <div style="border: 1px solid gainsboro;width: 800px;">
+                <form-editor iscs-model="model.name" iscs-type="input" iscs-init="某某某" label="姓名：" colspan="3"></form-editor>
+                <form-editor iscs-model="model.phone" iscs-type="input" iscs-init="12314567890" label="电话：" colspan="3"></form-editor>
+                <form-editor iscs-model="model.age" iscs-type="input" iscs-init="18" label="年龄：" colspan="3"></form-editor>
+                <form-editor iscs-model="model.text1" iscs-type="textarea" iscs-init="This is a example!" label="textarea：" colspan="3"></form-editor>
+                <form-editor iscs-model="model.text2" iscs-type="textarea" iscs-init="This is a example2!" label="textarea2：" colspan="3"></form-editor>
+                <form-editor iscs-model="model.select1" iscs-type="select" iscs-init="example01" label="select：" colspan="3" example-data="exampleSelect"></form-editor>
+                <form-editor iscs-model="model.select2" iscs-type="select" iscs-init="example02" label="select2：" colspan="3" example-data="exampleData"></form-editor>
+            </div>
+        </uib-tab>
+
+        <uib-tab index="2" heading="数据权限">
+            <div class="width-300">
+                <uib-progressbar max="max" value="dynamic"><span style="color:white; white-space:nowrap;">{{dynamic}} / {{max}}</span></uib-progressbar>
+                <uib-progressbar max="max" value="dynami"><span style="color:white; white-space:nowrap;">{{dynami}} / {{max}}</span></uib-progressbar>
+                <uib-progressbar animate="false" value="dynamic" type="success"><b>{{dynamic}}%</b></uib-progressbar>
+            </div>
+        </uib-tab>
+    </uib-tabset>
+</div>

@@ -1,0 +1,89 @@
+<!--仓库需求预测详情页面-->
+<panel dialog>
+    <pbody>
+
+        <uib-tabset class="iscs-table-tab" active="activeForm">
+            <uib-tab index="1" heading="总需求">
+                <div class="display-table mrg10T pad20A line-height28">
+                    <div class="col-md-3 ">
+                        <span class="color-8c">名称：</span><span class="color-444">{{vm.model.demandForecastName}}</span>
+                    </div>
+                    <div class="col-md-3 ">
+                        <span class="color-8c">需方：</span>
+                        <span class="color-444">{{vm.model.pptName}}</span>
+                    </div>
+                    <div class="col-md-3 ">
+                        <span class="color-8c">发起人：</span>
+                        <span class="color-444">{{vm.model.sponsor}}</span>
+                    </div>
+                    <div class="col-md-3 ">
+                        <span class="color-8c">品类：</span>
+                        <span class="color-444">{{vm.model.categoryName}}</span>
+                    </div>
+                    <div class="col-md-3 ">
+                        <span class="color-8c">平台：</span>
+                        <span class="color-444">{{vm.model.platformName}}</span>
+                    </div>
+                    <div class="col-md-3 ">
+                        <span class="color-8c">单量：</span>
+                        <span class="color-444">{{vm.model.orderQty}}</span>
+                    </div>
+                    <div class="col-md-3 ">
+                        <span class="color-8c">数量：</span>
+                        <span class="color-444">{{vm.model.itemNum}}</span>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="color-8c">作业：</span>
+                        <span class="color-444">{{vm.model.operationName}}</span>
+                    </div>
+                    <div class="col-md-12 ">
+
+                        <span class="color-8c">包含日常需求：{{vm.model.containDailyDemand==1?'是':'否'}}</span>
+                    </div>
+                    <div class="col-md-12 ">
+                        <span class="color-8c">原因：</span>
+                        <span class="color-444">{{vm.model.reasonName}}</span>
+                    </div>
+                    <div class="col-md-12 ">
+                        <span class="color-8c">需求时间：</span>
+                        <span class="color-444">{{vm.model.startTime  | limitTo:10 }}到{{vm.model.endTime  | limitTo:10}}</span>
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab index="2" heading="详细需求">
+                <div class="pad20A">
+                    <div style="overflow:auto;" class="max-height400">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>商品编码</th>
+                                    <th>数量</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in vm.items">
+                                    <td ng-bind="item.itemCode"></td>
+                                    <td ng-bind="item.itemNum"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mrg5B border-all">
+                        <uib-pagination ng-model="vm.currentPage" total-items="totalItems" ng-change="pageChanged()" items-per-page="page.selectedPageSize.name" template-url="/views/tpl/pagination.html" max-size="maxSize" class="pagination-sm" boundary-links="true" boundary-link-numbers="true"
+                            rotate="false"></uib-pagination>
+                        <div class="float-right table-paging mrg20T"> <select ng-options="option.name for option in page.pageSize track by option.id" ng-model="page.selectedPageSize" ng-change="onPageSizeChanged(page.selectedPageSize)"></select> <span>{{"base.recordPage" | translate}}</span></div>
+                    </div>
+                </div>
+                <!--<div class="table-height-lg" id="forecastDetail" style="width:800px;">
+                    <iscs-grid grid-config="gridOptions" check-box="false"  no="false"></iscs-grid>
+                </div>-->
+            </uib-tab>
+        </uib-tabset>
+        <div class="dialog-right-close" ng-click="event.close()"><i class="fa fa-times"></i></div>
+    </pbody>
+    <pfoot>
+        <div style="height: 40px;" class="text-center">
+            <button class="btn btn-primary pull-right mrg10L" ng-click="event.close()">{{ 'base.confirm' | translate }}</button>
+        </div>
+    </pfoot>
+</panel>

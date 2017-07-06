@@ -1,0 +1,21 @@
+<div>
+	<div class="dropdown pull-right  mrg5R" uib-dropdown ng-if="moreBtns.length" id="dropdown">
+	    <button class="btn btn-default dropdown-toggle" uib-dropdown-toggle>
+			<i class="fa fa-cog color-8c"></i>
+			{{'base.more' | translate}}
+		</button>
+	    <!-- dropdown -->
+	    <ul class="dropdown-menu animated fadeInRight font-size-12">
+			<li ng-repeat="moreBtn in moreBtns | orderBy:'index'" ng-if="event[moreBtn.code]" ng-click="event[moreBtn.code]()">
+				<a><i class="{{moreBtn.icon}} color-8c"></i>{{moreBtn.name | translate}}</a>
+			</li>
+	    </ul>
+	    <!-- / dropdown -->
+	</div>
+	<button ng-repeat="baseBtn in baseBtns | orderBy:'index'" 
+			ng-if="event[baseBtn.code]" ng-click="event[baseBtn.code]()" 
+			ng-class="{'pull-right':baseBtn.float === undefined}" class="btn btn-default mrg5R">
+			<i class="{{baseBtn.icon}} color-8c "></i>
+			{{baseBtn.name | translate}}
+	</button>
+</div>  

@@ -1,0 +1,213 @@
+<!--仓库需求预测新增编辑页面-->
+<panel dialog>
+    <pbody>
+        <uib-tabset class="iscs-table-tab " active="activeForm">
+            <uib-tab index="1" heading="总需求">
+
+                <div class="mrg30T pad20B">
+                    <div class="mrg30R">
+                        <div class="width-250 pull-left">
+                            <div class="width-150 pull-right">
+                                <input type="text" class="form-control width-150" id="demandForecastName" name="demandForecastName" ng-model="vm.model.demandForecastName" required placeholder="">
+                            </div>
+                            <div class="text-right line-height30 pull-right ">
+                                <span class="color-red-notice">*</span><span class="color-8c">名称：</span>
+                            </div>
+                        </div>
+                        <div class="width-250 pull-left">
+                            <div class="width-150 pull-right">
+                                <ui-select ng-model="vm.choose.demandSideSelected.selected" on-select="vm.selectedEvent($item, $model,'demandSide')">
+                                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                                        <span ng-bind="$select.selected.name"></span>
+                                    </ui-select-match>
+                                    <ui-select-choices repeat="item in (vm.dropListData.demandUnit | filter: $select.query) track by item.code">
+                                        <span ng-bind="item.name"></span>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                            <div class="text-right line-height30 pull-right ">
+                                <span class="color-red-notice">*</span><span class="color-8c">需方：</span>
+                            </div>
+                        </div>
+                        <div class="width-250 pull-left">
+                            <div class="width-150 pull-right">
+                                <input type="text" class="form-control width-150" id="sponsor" ng-model="vm.model.sponsor" placeholder="">
+                            </div>
+                            <div class="text-right line-height30 pull-right ">
+                                <span class="color-8c">发起人：</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mrg30R">
+                        <div class="width-250 pull-left mrg10T">
+                            <div class="width-150 pull-right">
+                                <ui-select ng-model="vm.choose.categorySelected.selected" on-select="vm.selectedEvent($item, $model,'category')">
+                                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                                        <span ng-bind="$select.selected.name"></span>
+                                    </ui-select-match>
+                                    <ui-select-choices repeat="item in (vm.dropListData.productCategory | filter: $select.query) track by item.code">
+                                        <span ng-bind="item.name"></span>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                            <div class="text-right line-height30 pull-right ">
+                                <span class="color-8c">品类：</span>
+                            </div>
+                        </div>
+                        <div class="width-250 pull-left mrg10T">
+                            <div class="width-150 pull-right">
+                                <ui-select ng-model="vm.choose.platformSelected.selected" on-select="vm.selectedEvent($item, $model,'platform')">
+                                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                                        <span ng-bind="$select.selected.name"></span>
+                                    </ui-select-match>
+                                    <ui-select-choices repeat="item in (vm.dropListData.BaPlatform | filter: $select.query) track by item.code">
+                                        <span ng-bind="item.name"></span>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                            <div class="text-right line-height30 pull-right ">
+                                <span class="color-8c">平台：</span>
+                            </div>
+                        </div>
+                        <div class="width-250 pull-left mrg10T">
+                            <div class="width-150 pull-right">
+                                <input type="number" class="form-control width-150" name="orderQty" id="orderQty" ng-model="vm.model.orderQty" required>
+                            </div>
+                            <div class="text-right line-height30 pull-right ">
+                                <span class="color-red-notice">*</span><span class="color-8c">单量：</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mrg30R">
+                        <div class="width-250 pull-left mrg10T">
+                            <div class="width-150 pull-right">
+                                <input type="number" class="form-control width-150" name="itemNum" id="itemNum" ng-model="vm.model.itemNum">
+                            </div>
+                            <div class="text-right line-height30 pull-right ">
+                                <span class="color-8c">数量： </span>
+                            </div>
+                        </div>
+                        <div class="width-250 pull-left mrg10T">
+                            <div class="width-150 pull-right">
+                                <ui-select ng-model="vm.choose.operationSelected.selected" on-select="vm.selectedEvent($item, $model,'operation')">
+                                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                                        <span ng-bind="$select.selected.name"></span>
+                                    </ui-select-match>
+                                    <ui-select-choices repeat="item in (vm.dropListData.DfOperationCode | filter: $select.query) track by item.code">
+                                        <span ng-bind="item.name"></span>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                            <div class="text-right line-height30 pull-right ">
+                                <span class="color-red-notice">*</span><span class="color-8c">作业： </span>
+                            </div>
+                        </div>
+
+                        <div class="width-250 pull-left mrg10T">
+                            <div class="width-150 pull-right">
+                                <label class="switch">
+                            <input type="checkbox" class="width-150" checked="checked" ng-click="vm.test()" id="containDailyDemand" name="containDailyDemand" ng-model="vm.model.containDailyDemandShow">
+                            <span></span>
+                            </label>
+                            </div>
+                            <div class="text-right line-height30 pull-right ">
+                                <span class="color-8c">包含日常需求：</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="pull-left mrg10T clear">
+                            <div class="pull-right mrg10L">
+                                <div class="btn-group " role="group">
+                                    <label ng-click="vm.addDay(1)" ng-model="vm.choose.dateType" uib-btn-radio="'one'" class="btn btn-iscs-search">1天</label>
+                                    <label ng-click="vm.addDay(3)" ng-model="vm.choose.dateType" uib-btn-radio="'three'" class="btn btn-iscs-search">3天</label>
+                                    <label ng-click="vm.addDay(7)" ng-model="vm.choose.dateType" uib-btn-radio="'seven'" class="btn btn-iscs-search">7天</label>
+                                </div>
+                            </div>
+                            <div class="width-120 pull-right">
+                                <adm-dtp ng-model="vm.model.endTime" mindate="{{vm.nowDate}}" options="{format:'YYYY-MM-DD',default: 0}">
+                                    <input class="form-control " type="text" ng-model="vm.model.endTime" dtp-input />
+                                </adm-dtp>
+                            </div>
+                            <div class="text-right line-height30 pull-right mrg5L mrg5R">
+                                <span>~</span>
+                            </div>
+                            <div class="width-120 pull-right">
+                                <adm-dtp ng-model="vm.model.startTime" mindate="{{vm.nowDate}}" options="{format:'YYYY-MM-DD',default: 0}">
+                                    <input class="form-control " type="text" ng-model="vm.model.startTime" dtp-input />
+                                </adm-dtp>
+                            </div>
+                            <div class="text-right line-height30 pull-right width-100">
+                                <span class="color-red-notice">*</span><span class="color-8c">需求时间：</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clear">
+                        <div class="width-100 pull-left mrg5T">
+                            <div class="text-right line-height30 pull-left width-100 ">
+                                <span class="color-8c">原因：</span>
+                            </div>
+                        </div>
+                        <div class="pull-left mrg5R mrg10T" ng-repeat="reason in vm.dropListData.DfReason track by reason.displaySeq">
+                            <label class="checkbox-inline c-checkbox">
+                            <input type="checkbox" ng-click="vm.showReasonInput(reason)" id="reasonName" name="reasonName" ng-model="reason.choose" >
+                            <span class="fa fa-check" style="margin-top:3px;"></span>
+                            </label>
+                            <span class="text-center">{{reason.name}}</span>
+                        </div>
+                    </div>
+                    <div class="mrg100L">
+                        <input ng-show="vm.isShowReasonInput" class="form-control width-150" type="text" id="reasonRemark" name="reasonRemark" ng-model="vm.model.reasonRemark" placeholder="请填写具体原因">
+                    </div>
+
+                    <div class="text-center mrg50R mrg30B">
+                        <button class="btn btn-default pull-right mrg10L" ng-click="event.close()">{{ 'base.cancel' | translate }}</button>
+                        <button class="btn btn-warning pull-right" type="submit" ng-click="vm.save(demandForecastForm)">{{ 'base.save' | translate }}</button>
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab index="2" heading="详细需求">
+                <div class="pad20A mrg10T">
+                    <div class="max-height400" style="overflow:auto;">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>商品编码</th>
+                                    <th>数量(件)</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th><input type="text" ng-model="vm.product.itemCode"></th>
+                                    <th><input type="number" ng-model="vm.product.itemNum"></th>
+                                    <th><span class="cursor" ng-click="vm.addProduct()">添加</span></th>
+                                </tr>
+                                <tr ng-repeat="product in vm.products">
+                                    <td>
+                                        <div ng-show="!product.inputcode" ng-bind="product.itemCode" ng-click="inputcodes($event,product)"></div>
+                                        <div ng-show="product.inputcode"><input type="text" ng-model="product.itemCode" ng-blur="inputblur($event,product)" value="{{product.itemCode}}" /></div>
+                                    </td>
+                                    <td>
+                                        <div ng-show="!product.inputnum" ng-bind="product.itemNum" ng-click="inputnums($event,product)"></div>
+                                        <div ng-show="product.inputnum"><input type="number" ng-model="product.itemNum" ng-blur="inputnumblur($event,product)" value="{{product.itemNum}}" /></div>
+                                    </td>
+                                    <td><span class="cursor" ng-click="vm.removeProduct(product)">删除</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-center pad30B mrg10T">
+                        <button class="btn btn-default pull-right mrg10L" ng-click="event.close()">{{ 'base.cancel' | translate }}</button>
+                        <button class="btn btn-warning pull-right" type="submit" ng-click="vm.save(demandForecastForm)">{{ 'base.save' | translate }}</button>
+                    </div>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+        <div class="dialog-right-close" ng-click="event.close()"><i class="fa fa-times"></i></div>
+    </pbody>
+</panel>

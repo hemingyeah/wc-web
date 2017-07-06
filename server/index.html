@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <title>socket.io</title>
+</head>
+
+<body>
+  <div id="message" style="width:500px;height:300px;border-width:5px;border-color:blue;background-color:black;color:white">
+
+  </div>
+  <script src="//cdn.bootcss.com/socket.io/1.4.6/socket.io.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/2.2.3/jquery.js"></script>
+
+  <script>
+    
+    var socket = io('ws://127.0.0.1:8081', {
+      transports: ['websocket', 'polling']
+    });
+
+    socket.on('news', function(data) {
+      console.log(data);
+      $('#message').append(JSON.stringify(data) + '<br/>');
+      socket.emit('my other event', {
+        my: 'data'
+      });
+    });
+
+    socket.emit('fromPage', {
+      name: 'wangtao'
+    });
+
+    socket.on('anytao', function(data) {
+      console.log(data);
+      $('#message').append(JSON.stringify(data) + '<br/>');
+    });
+  </script>
+</body>
+
+</html>

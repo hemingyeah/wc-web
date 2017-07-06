@@ -1,0 +1,13 @@
+<!-- 临时菜单 -->
+<div class="iscs-nav-menus">
+    <span class="fa fa-angle-left iscs-tabs-btn pull-left" ng-click="navTabLeft(tabItems)"></span>
+    <div class="nav nav-tabs tab-menu">
+        <li ng-repeat="tab in tabItems track by $index" role="presentation" ng-class="{true: 'tab-show-one', false: 'tab-hide-one'}[tab.kclass]">
+            <button class="iscs-tab-btn btn {{tab.iconId}}" ng-click="ifShow(tab, $event)" style="display: block;"><b class="fa fa-home mrg5R" ng-hide="$index"></b>{{tab.pageName}}</button>
+            <i class="fa fa-times-circle cursor" ng-click="closeTab(tab, $index)" ng-show="$index"></i>
+        </li>
+    </div>
+    <span class="fa fa-angle-right iscs-tabs-btn pull-right" ng-click="navTabRight(tabItems)"></span>
+</div>
+<div ng-repeat="tab in tabItems track by $index" ng-show="tab.show" ui-view="{{tab.pageUrl}}" class="well table-height-main" load-data="loadData()" table-height>
+</div>

@@ -1,0 +1,24 @@
+<panel dialog>
+        <phead>{{ 'order.information.consignee' | translate }}</phead>
+    <pbody>
+        <div class="display-table pad10A">
+            <div class="mrg10T line-height28">
+                <span class="color-8c">{{ 'order.name.consignee' | translate }}：</span><!-- 收货人 --><span class="color-444" ng-bind="model.receiverName"></span>
+            </div>
+            <div class="mrg10T line-height28">
+                <span class="color-8c">{{ 'base.address' | translate }}：</span><!-- 收货地址 --><span class="color-444" ng-bind="model.receiverAddress"></span>
+            </div>
+            <div class="mrg10T line-height28">
+                <span class="color-8c">{{ 'base.phone' | translate }}：</span><!-- 手机 --><span class="color-444" ng-bind="model.receiverMobile"></span>
+            </div>
+            <div class="mrg10T line-height28">
+                <span class="color-8c">{{ 'base.telephone' | translate }}：</span><!-- 电话 --><span class="color-444" ng-bind="model.receiverPhone"></span>
+            </div>
+        </div>
+    </pbody>
+    <pfoot>
+        <div style="height: 40px;" class="text-center">
+            <button class="btn btn-default" ng-click="event.close()">{{ 'base.close' | translate }}</button><!-- 关闭 -->
+        </div>
+    </pfoot>
+</panel>

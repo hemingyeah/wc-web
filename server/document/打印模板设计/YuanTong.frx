@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="04/28/2016 09:53:13" ReportInfo.Modified="05/11/2016 09:00:38" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <XmlDataConnection Name="Connection" ConnectionString="rijcmlquR/hUvz+Vv8/DhemT3MN7LTFXVI2qy5gufyxrrUCo+RQEzBO6WdNJWe2Q0f3SgZhF+UCAvwTAMDzsc2SEdPzzfFbsNdLfye9RDLSsnjijkTQbVAQhJxfUspIT7FIWoosjprVVpQbIVWagUQx39fCn2mcY6W+rSXtxKsnd3oHlySQHm76oqxqVtJjCE115vZm">
+      <TableDataSource Name="bookstore" DataType="System.Int32" Enabled="true" TableName="bookstore">
+        <Column Name="bookstore_Id" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="book" DataType="System.Int32" Enabled="true" TableName="book">
+        <Column Name="genre" DataType="System.String"/>
+        <Column Name="publicationdate" DataType="System.String"/>
+        <Column Name="ISBN" DataType="System.String"/>
+        <Column Name="title" DataType="System.String"/>
+        <Column Name="price" DataType="System.Decimal"/>
+        <Column Name="book_Id" DataType="System.Int32"/>
+        <Column Name="bookstore_Id" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="author" DataType="System.Int32" Enabled="true" TableName="author">
+        <Column Name="first-name" DataType="System.String"/>
+        <Column Name="last-name" DataType="System.String"/>
+        <Column Name="book_Id" DataType="System.Int32"/>
+      </TableDataSource>
+    </XmlDataConnection>
+    <Relation Name="book_author" ParentDataSource="book" ChildDataSource="author" ParentColumns="book_Id" ChildColumns="book_Id" Enabled="true"/>
+    <Relation Name="bookstore_book" ParentDataSource="bookstore" ChildDataSource="book" ParentColumns="bookstore_Id" ChildColumns="bookstore_Id" Enabled="true"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="100" PaperHeight="180" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="256" OtherPagesSource="256">
+    <DataBand Name="Data1" Top="20" Width="378" Height="680.4" Guides="784.35">
+      <LineObject Name="Line1" Left="9.45" Top="9.45" Height="661.5"/>
+      <LineObject Name="Line2" Left="9.45" Top="9.45" Width="359.1"/>
+      <LineObject Name="Line3" Left="9.45" Top="670.95" Width="359.1"/>
+      <LineObject Name="Line4" Left="368.55" Top="670.95" Height="-661.5"/>
+      <LineObject Name="Line5" Left="9.45" Top="94.5" Width="359.1"/>
+      <BarcodeObject Name="Barcode1" Left="170.1" Top="9.45" Width="193.25" Height="85.05" AutoSize="false" Barcode="Code128" Barcode.AutoEncode="true"/>
+      <LineObject Name="Line6" Left="170.1" Top="9.45" Height="85.05"/>
+      <TextObject Name="Text1" Left="18.9" Top="18.9" Width="94.5" Height="18.9" Text="标准快递:" Font="宋体, 14pt, style=Bold"/>
+      <TextObject Name="Text2" Left="9.45" Top="103.95" Width="198.45" Height="18.9" Text="寄件：[Date][bookstore.bookstore_Id]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text3" Left="9.45" Top="122.85" Width="94.5" Height="18.9" Text="邮编：" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text4" Left="9.45" Top="141.75" Width="94.5" Height="18.9" Text="电话：" VertAlign="Center" Font="宋体, 9pt"/>
+      <LineObject Name="Line7" Left="9.45" Top="160.65" Width="359.1"/>
+      <TextObject Name="Text5" Left="9.45" Top="170.1" Width="94.5" Height="18.9" Text="收件：" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text6" Left="9.45" Top="189" Width="94.5" Height="18.9" Text="邮编：" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text7" Left="9.45" Top="207.9" Width="94.5" Height="18.9" Text="电话：" VertAlign="Center" Font="宋体, 9pt"/>
+      <LineObject Name="Line8" Left="9.45" Top="236.25" Width="359.1"/>
+      <LineObject Name="Line9" Left="9.45" Top="415.8" Width="359.1"/>
+      <LineObject Name="Line10" Left="9.45" Top="321.3" Width="359.1"/>
+      <TextObject Name="Text8" Left="9.45" Top="245.7" Width="94.5" Height="18.9" Text="付款方式：" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text9" Left="9.45" Top="264.6" Width="132.3" Height="18.9" Text="计费重量(kg)：" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text10" Left="9.45" Top="283.5" Width="132.3" Height="18.9" Text="保价金额(元)：" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text11" Left="170.1" Top="236.25" Width="94.5" Height="18.9" Text="收件人：" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text21" Left="170.1" Top="255.15" Width="198.45" Height="18.9" Text="签收时间：   年   月   日   时" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text22" Left="170.1" Top="292.95" Width="189" Height="28.35" Text="快递送达收货地址，经收件人允许的代收件人签字视为送达。" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text12" Left="9.45" Top="330.75" Width="94.5" Height="18.9" Text="订单号：" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text13" Left="9.45" Top="349.65" Width="94.5" Height="18.9" Text="件数：" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text14" Left="9.45" Top="368.55" Width="94.5" Height="18.9" Text="重量：" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text15" Left="9.45" Top="387.45" Width="94.5" Height="18.9" Text="订单详情：" VertAlign="Center" Font="宋体, 9pt"/>
+      <LineObject Name="Line13" Left="245.7" Top="359.1" Width="122.85"/>
+      <LineObject Name="Line16" Left="274.05" Top="387.45" Width="94.5"/>
+      <TextObject Name="Text26" Left="245.7" Top="359.1" Width="28.35" Height="56.7" Text="已&#13;&#10;验" HorzAlign="Center" Font="宋体, 18pt"/>
+      <TextObject Name="Text27" Left="274.05" Top="359.1" Width="37.8" Height="28.35" Text="重量" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text28" Left="274.05" Top="387.45" Width="47.25" Height="28.35" Text="验视人" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <LineObject Name="Line11" Left="245.7" Top="359.1" Height="56.7"/>
+      <LineObject Name="Line12" Left="274.05" Top="359.1" Height="56.7"/>
+      <LineObject Name="Line14" Left="170.1" Top="236.25" Height="85.05"/>
+      <LineObject Name="Line15" Left="189" Top="94.5" Height="66.15"/>
+      <LineObject Name="Line17" Left="9.45" Top="652.05" Width="283.5"/>
+      <LineObject Name="Line18" Left="9.45" Top="595.35" Width="359.1"/>
+      <LineObject Name="Line19" Left="292.95" Top="595.35" Height="75.6"/>
+      <LineObject Name="Line20" Left="9.45" Top="500.85" Width="359.1"/>
+      <BarcodeObject Name="Barcode2" Left="9.45" Top="415.8" Width="174.35" Height="75.6" AutoSize="false" Barcode="Code128" Barcode.AutoEncode="true"/>
+      <LineObject Name="Line21" Left="189" Top="415.8" Height="85.05"/>
+      <PictureObject Name="Picture1" Left="189" Top="415.8" Width="179.55" Height="85.05" Image=""/>
+      <TextObject Name="Text16" Left="9.45" Top="500.85" Width="94.5" Height="18.9" Text="寄件：" VertAlign="Center" Font="宋体, 9pt"/>
+      <LineObject Name="Line22" Left="189" Top="500.85" Height="94.5"/>
+      <TextObject Name="Text17" Left="189" Top="500.85" Width="94.5" Height="56.7" Text="收件：&#13;&#10;邮编：&#13;&#10;电话：" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text18" Left="9.45" Top="595.35" Width="94.5" Height="18.9" Text="序号：[Page]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text19" Left="113.4" Top="595.35" Width="94.5" Height="18.9" Text="批次号：" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text20" Left="9.45" Top="633.15" Width="94.5" Height="18.9" Text="备注：" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text23" Left="9.45" Top="652.05" Width="283.5" Height="18.9" Text="网址：                客服电话：          " VertAlign="Center" Font="宋体, 9pt"/>
+      <PictureObject Name="Picture2" Left="292.95" Top="595.35" Width="75.6" Height="75.6" Image=""/>
+    </DataBand>
+  </ReportPage>
+</Report>

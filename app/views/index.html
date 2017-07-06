@@ -1,0 +1,19 @@
+<!-- 头部 -->
+
+<heade></heade>
+<!-- / navbar -->
+<div ng-init="
+app.settings.headerFixed = true;
+app.settings.asideFixed = true;
+app.settings.asideFolded = false;
+app.settings.asideDock = false;
+app.settings.container = false;
+"></div>
+
+<!--  改造后的中间层 -->
+<div class="app-content">
+<div ui-butterbar></div>
+<a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside" ></a>
+<div class="app-content-body fade-in-up" ng-class="{'app-content-full':app.Layout}" ui-view></div>
+</div>
+<!-- /content -->

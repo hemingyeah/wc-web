@@ -1,0 +1,129 @@
+<div class="login-page">
+    <!-- header-main -->
+    <header>
+        <div></div>
+    </header>
+    <!-- header-end -->
+    <!-- login-main -->
+    <div class="login-main">
+        <!-- 代码begin -->
+        <div id="slideBox" class="slideBox">
+            <div class="hd">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <li class="banner1" style="background: url(/images/login-images/banner_1_bg.jpg) center 0px no-repeat #0EAD51; ">
+                        <div class="content1">
+                            <div id="a3">多重保障,扫码登录<span>更安全</span></div>
+                            <div id="a4"></div>
+                            <div id="a5"></div>
+                        </div>
+                    </li>
+                    <li class="banner1" style="background:#0ab794 ">
+                        <!-- url(/images/login-images/banner4.png) center 0px no-repeat; -->
+                        <div class="content1">
+                            <div id="a8"></div>
+                            <div id="a9"></div>
+                            <div id="a6"></div>
+                            <div id="a7">大服务，贴心护航</div>
+                            <div id="a10">
+                                <span>全程服务</span>
+                                <span>个性化柔性服务</span>
+                                <span>免费升级服务</span>
+                                <span>持续服务，对结果负责</span>
+                                <span>实时服务</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="banner1" style="background: url(/images/login-images/banner_3_bg.jpg) center 0px no-repeat #ff591f;">
+                        <div class="content1">
+                            <div class="b2_word">
+                                <var id="a21"></var><span id="a23"></span>
+                                <var id="a22"></var>
+                            </div>
+                            <div id="a24">因为专业,所以信赖</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 代码end -->
+        <!-- login-main -->
+        <div id="login-form">
+            <aside>
+                <div class="login-iscs">
+                    <ul class="login-user">
+                        <h2>
+          
+          <span class="login-user-tip"></span>
+          账号登录
+        </h2>
+                        <div class="login-user-err">
+                            <div class="login-user-err-main">
+                                <span class="login-user-err-icon"></span>
+                                <span class="login-user-err-text">您的密码错误</span>
+                            </div>
+                            <div class="login-user-tip-main">
+                                <span class="login-user-tip-icon"></span>
+                                <span class="login-user-tip-text">您的可安全登录</span>
+                            </div>
+                        </div>
+                        <div class="login-user-username">
+                            <input type="text" ng-model="model.userName" name="userName"   placeholder="您的账号" />
+                            <!-- required -->
+                        </div>
+                        <div class="login-user-password">
+                            <input type="password" ng-model="model.password" name="password" placeholder="您的密码" />
+                        </div>
+                        <div class="login-pwd-forget">
+                            <a ui-sref="password.passwordCall" >忘记登录密码？</a>
+                            <div class="login-checkbox cursor"><span class=""></span>记住账号</div>
+                            <!--<input type="checkbox"><span>记住密码</span>-->
+                        </div>
+                        <div id="login-submit" class="login-user-submit cursor" ng-click="event.login()">
+                            登录
+                        </div>
+                        <div class="login-taobao">
+                            <a href="#"><span></span>淘宝登录</a>
+                        </div>
+                    </ul>
+                    <!-- 二维码 -->
+                    <ul class="login-qrcode">
+                        <h2>
+          
+          <span class="login-qrcode-tip"></span>
+          手机扫码安全登录
+        </h2>
+                        <div class="login-qrcode-img">
+                            <div class="qrcode-img" style="background:url(/images/login-images/qrcode_img.jpg) no-repeat"></div>
+                        </div>
+                        <div class="login-qrcode-text">
+                            请打开<a href="javascript:void(0);" target="_blank">移动网仓</a>扫一扫登录
+                        </div>
+                        <div class="login-qrcode-mask">
+                            <span class="cursor"></span>
+                            <div>二维码已失效，请点击刷新</div>
+                        </div>
+                    </ul>
+                    <div class="login-user-qrcode-main">
+                        <span class="login-user-qrcode cursor"></span>
+                        <!--<span class="login-qrcode-pc cursor"></span>-->
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <!-- main end-->
+    <!-- footer-main -->
+    <footer>
+        <div>
+            Copyright©2010-2016 浙江网仓科技有限公司 版权所有 浙ICP备11042498-1号
+        </div>
+    </footer>
+    <!-- footer-end -->
+</div>

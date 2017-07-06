@@ -1,0 +1,70 @@
+<div id="container" style="overflow:auto;height:100%">
+    <div class="row mrg0A pad0A">
+        <div class="row mrg0A pad0A float-left">
+            <div class="mrg20L mrg20T float-left color-444">需方：</div>
+            <div class="mrg10T float-right width-200">
+                <ui-select ng-model="vm.choose.demandSideSelected.selected" on-select="vm.search()">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (vm.dropListData.demandUnit | filter: $select.query) track by item.code">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <div class="row mrg0A pad0A float-left">
+            <div class="mrg20L mrg20T float-left color-444">状态：</div>
+            <div class="mrg10T float-right width-120">
+                <ui-select ng-model="vm.choose.statusSelected.selected" on-select="vm.search()">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (vm.dropListData.status | filter: $select.query) track by item.name">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <div class="mrg20T float-right"> <label class="checkbox-inline c-checkbox">
+                            <input type="checkbox" ng-click="vm.search()" id="expireTime" name="expireTime" ng-model="vm.isExpire" >
+                            <span class="fa fa-check mrg5T"></span>
+                            </label><span class="mrg5L color-999">显示到期需求</span></div>
+    </div>
+
+    <div class="row mrg0A pad0A">
+        <div class="col-md-3 mrg20T pad0A">
+            <div class="mrg20L boder-all text-center forecast-border-dashed">
+                <div class="iscs-icon-add cursor" ng-click="vm.showAdd()"></div>
+                <div>
+                    <p class="font-size-12 cursor pad10T" ng-click="vm.showAdd()">新增需求</p>
+                </div>
+            </div>
+        </div>
+        <div ng-repeat="item in vm.items" class="col-md-3 mrg20T pad0A">
+            <div class="mrg20L boder-all pad10T mrg0B forecast-border-solid  ">
+                <div ng-click="vm.showDetail(item.demandForecastUkid)" class="cursor">
+                    <span class="mrg10T mrg20L color-444 font-size-14 font-bold line-height42" ng-bind="item.demandForecastName"></span>
+                    <!--未审核forecast-unchecked 已审核forecast-checked 已到期forecast-expire-->
+                    <div class="mrg10T mrg20R pad5L pad5R float-right {{item.showClass}}">{{item.showName}}</div>
+                    <p><span class="font-size-12 mrg5B mrg20L color-8c" ng-bind="item.demandSideName"></span></p>
+                    <hr class="mrg10R mrg10L color-ec forecast-hr">
+                    <p class="mrg5B color-8c"><span class="mrg20L mrg0T">品　　类：</span><span class="mrg10L color-444">{{item.categoryName}}</span></p>
+                    <p class="font-size-12 mrg5B mrg20L color-8c">单　　量：<span class="mrg10L color-444">{{item.orderQty}}</span></p>
+                    <p class="mrg5B mrg20L color-8c">数　　量：<span class="mrg10L color-444">{{item.itemNum}}</span></p>
+                    <p class="mrg5B mrg20L color-8c">需求时间：<span class="mrg10L color-444">{{item.startTime | limitTo:10}} 到 {{item.endTime  | limitTo:10}}</span></p>
+                    <p class="mrg10B mrg20L color-8c">创建时间：<span class="mrg10L color-444">{{item.createTime}}</span></p>
+                </div>
+                <div class="mrg0A col-md-6 text-center forecast-details"><span><a  ng-disabled="false" ng-click="vm.showUpdate(item,'check')" class="color-8c">审核</a></span></div>
+                <div class="mrg0A col-md-6 text-center forecast-delete"><span><a href="" ng-click="vm.showUpdate(item,'delete')" class="color-8c">删除</a></span></div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="mrg5B border-all">
+            <uib-pagination ng-model="currentPage" total-items="totalItems" ng-change="pageChanged()" items-per-page="page.selectedPageSize.name" template-url="/views/tpl/pagination.html" max-size="maxSize" class="pagination-sm" boundary-links="true" boundary-link-numbers="true"
+                rotate="false"></uib-pagination>
+            <div class="float-right table-paging mrg20T"> <select ng-options="option.name for option in page.pageSize track by option.id" ng-model="page.selectedPageSize" ng-change="onPageSizeChanged(page.selectedPageSize)"></select> <span>{{"base.recordPage" | translate}}</span></div>
+        </div>
+    </div>
+</div>

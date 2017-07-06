@@ -1,0 +1,35 @@
+<div id="container" style="height:100%">
+    <div class="row mrg30T pad0A">
+        <div class="row mrg0A pad0A float-left">
+            <div class="mrg50L mrg10T float-left color-444">需方：</div>
+            <div class=" float-right width-200">
+                <ui-select ng-model="vm.choose.demandSideSelected.selected" on-select="vm.search()">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (vm.dropListData.demandUnit | filter: $select.query) track by item.code">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <div class="row mrg50R pad0A float-right">
+            <div class="btn-group mrg30R" role="group">
+                <label ng-click="vm.search()" ng-model="vm.choose.dateType" uib-btn-radio="'day'" class="btn btn-iscs-search">按日查看</label>
+                <label ng-click="vm.search()" ng-model="vm.choose.dateType" uib-btn-radio="'month'" class="btn btn-iscs-search">按月查看</label>
+                <label ng-click="vm.search()" ng-model="vm.choose.dateType" uib-btn-radio="'year'" class="btn btn-iscs-search">按年查看</label>
+            </div>
+            <div class="btn-group" role="group">
+                <label ng-click="vm.search()" ng-model="vm.choose.numType" uib-btn-radio="'orderQty'" class="btn btn-iscs-search">按单</label>
+                <label ng-click="vm.search()" ng-model="vm.choose.numType" uib-btn-radio="'itemNum'" class="btn btn-iscs-search">按数量</label>
+            </div>
+        </div>
+    </div>
+    <div class="row mrg40T">
+        <div class="col-md-12">
+            <div style="height:400px">
+                <ng-echarts class="col-md-12 echarts" ec-config="lineConfig" ec-option="lineOption"></ng-echarts>
+            </div>
+        </div>
+    </div>
+</div>

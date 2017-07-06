@@ -1,0 +1,112 @@
+<div bar-width class="app-header navbar">
+  <div class="collapse pos-rlt navbar-collapse box-shadow {{app.settings.navbarCollapseColor}}">
+    <!-- 菜单 -->
+
+    <!--自定义菜单-->
+    <div class="menu-custom">
+      <div ng-repeat="headMenuArray in headMenuArrays">
+        <span ng-bind="headMenuArray.pageName" ng-click="addTab(headMenuArray, $event)"></span>
+      </div>
+    </div>
+    <!--小于1000主菜单-->
+    <div class="min-menu"><i class="fa fa-bars"></i></div>
+    <div class="min-menu-main ">
+      <ul>
+        <li ng-repeat="menu in menuList track by $index" class="iscs-min-menu">
+          <a href class="auto" ng-click="menuIfShow(menu, $event)">
+            <span class="text-muted pull-left mrg5R mrg15L">
+                      <i class="{{menu.iconId}} "></i>
+                  </span>
+            <span class="pull-left" ng-bind="menu.pageName"></span>
+          </a>
+          <ul class="nav nav-sub dk" ng-show="menu.show">
+            <li ui-sref-active="active" ng-repeat="child in menu.items">
+              <a ng-click="addTab(child, $event)">
+                <span ng-bind="child.pageName"></span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!--主菜单-->
+    <div ng-hide="menuLevel" data-ng-include="'menu/left.html'" class="app-aside iscs-mens hidden-xs {{app.settings.asideColor}}"></div>
+    <div class="menu-custom-showLevel iscs-mens mrg5L" ng-click="showLevelToggle()">
+      <i class="fa" ng-class="{true: 'fa-caret-right', false: 'fa-caret-left'}[isActive]"></i>
+    </div>
+    <div class="menu-custom-add" ng-click="add()"><i class="fa fa-plus"></i></div>
+    <!-- 菜单 END-->
+    <!-- nabar right -->
+    <ul class="nav navbar-nav navbar-right iscs-navright pad10T">
+      <li class="dropdown mrg10R" uib-dropdown>
+        <a href class="dropdown-toggle clear" uib-dropdown-toggle>
+          <span ng-bind="languageName">中文</span>
+        </a>
+        <!-- dropdown -->
+        <ul class="dropdown-menu animated fadeInRight font-size-12">
+          <li ng-repeat="lang in langs">
+            <a href="#" ng-click="setLang(lang,$event)">{{lang.name}}</a>
+          </li>
+
+        </ul>
+        <!-- / dropdown -->
+      </li>
+      <li class="dropdown" uib-dropdown>
+        <a href class="dropdown-toggle" uib-dropdown-toggle>
+          <i class="fa fa-bell"></i>
+          <span class="badge badge-sm up bg-red-danger pull-right-xs">2</span>
+        </a>
+        <!-- dropdown -->
+        <div class="dropdown-menu width-250 animated fadeInUp">
+          <div class="panel bg-white">
+            <div class="panel-heading b-light bg-light">
+              <strong><span>2</span> {{ 'message.new' | translate }}</strong>
+              <!-- 条新通知 -->
+            </div>
+            <div class="list-group">
+              <a href class="media list-group-item">
+                <span class="media-body block m-b-none">
+                      南京国通智能正式在美国上市<br>
+                      <small class="text-muted">1小时前</small>
+                    </span>
+              </a>
+            </div>
+            <div class="panel-footer font-size-12">
+              <a href class="pull-right"><i class="fa fa-cog"></i></a>
+              <a href="#notes" data-toggle="class:show animated fadeInRight">{{ 'message.all' | translate }}</a>
+              <!-- 查看所有通知 -->
+            </div>
+          </div>
+        </div>
+        <!-- / dropdown -->
+      </li>
+      <li class="dropdown mrg20R" uib-dropdown>
+        <a href class="dropdown-toggle clear" uib-dropdown-toggle>
+          <span class="hidden-sm hidden-md" ng-bind="app.UserName"></span> <b class="caret"></b>
+        </a>
+        <!-- dropdown -->
+        <ul class="dropdown-menu animated fadeInRight font-size-12">
+          <li>
+            <a href>
+              <span>{{ 'base.set' | translate }}</span>
+              <!-- 设置 -->
+            </a>
+          </li>
+          <li>
+            <a ui-sref="app.page.profile">{{ 'base.passwordModified' | translate }}</a>
+            <!-- 修改密码 -->
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a ng-click="logOut()">{{ 'base.logOut' | translate }}</a>
+            <!-- 注销 -->
+          </li>
+        </ul>
+        <!-- / dropdown -->
+      </li>
+    </ul>
+    <!-- / navbar right -->
+
+  </div>
+  <!-- / navbar collapse -->
+</div>

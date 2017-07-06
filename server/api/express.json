@@ -1,0 +1,96 @@
+{
+    "code": "0",
+    "msg": "",
+    "data": [{
+        "name": "中通快递",
+        "age": "1001",
+        "buyerNick":"唐勤",
+        "expressIcon":"express-zhongtong",
+        "text": "大王叫我来巡山",
+        "data": [{
+            "fenname":"中通一部",
+            "fennameid":"001",
+            "typename":[{
+                "lalaname":"10元全国",
+                "lalaid":"0005"
+            },{
+                "lalaname":"40元全国",
+                "lalaid":"0006"
+            },{
+                "lalaname":"80元全国",
+                "lalaid":"0007"
+            }]
+        },{
+            "fenname":"中通二部",
+            "fennameid":"002",
+            "typename":[{
+                "lalaname":"110元全国",
+                "lalaid":"0005"
+            },{
+                "lalaname":"140元全国",
+                "lalaid":"0006"
+            },{
+                "lalaname":"180元全国",
+                "lalaid":"0007"
+        }]
+    }]
+    },{
+        "name": "顺丰快递",
+        "expressIcon":"express-shunfeng",
+        "age": "1002",
+        "buyerNick":"131299714",
+        "text": "大王叫我来巡山",
+        "data": [{
+            "fenname":"顺丰一部",
+            "fennameid":"003",
+            "typename":[{
+                "lalaname":"110元全国",
+                "lalaid":"0018"
+            },{
+                "lalaname":"170元全国",
+                "lalaid":"0019"
+            }]
+        },{
+            "fenname":"顺丰二部",
+            "fennameid":"004",
+            "typename":[{
+                "lalaname":"110元全国",
+                "lalaid":"0021"
+            }]
+        }]
+    },{
+        "name": "申通EMS快递",
+        "age": "1003",
+        "buyerNick":"符少英",
+        "expressIcon":"express-shentong",
+        "text": "大王叫我来巡山",
+        "data": [{
+            "fenname":"申通EMS一部",
+            "fennameid":"003",
+            "typename":[{
+                "lalaname":"110元全国",
+                "lalaid":"0023"
+            },{
+                "lalaname":"140元全国",
+                "lalaid":"0024"
+            },{
+                "lalaname":"180元全国",
+                "lalaid":"0025"
+            }]
+        }]
+    },{
+        "name": "圆通快递",
+        "age": "1004",
+        "buyerNick":"郑洁",
+        "expressIcon":"express-yuantong",
+        "text": "大王叫我来巡山",
+        "data": [{
+            "fenname":"圆通一部",
+            "fennameid":"0032",
+            "typename":[{
+                "lalaname":"510元全国",
+                "lalaid":"0028"
+            }]
+        }]
+    }
+]}

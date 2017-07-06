@@ -1,0 +1,209 @@
+<panel dialog>
+    <pbody>
+        <uib-tabset active="activeForm" class="iscs-table-tab">
+            <uib-tab index="0" heading="{{ 'base.basicInformation' | translate }}"><!-- 基本信息 -->
+               <div class="div-center mrg20T dialog-progress">
+                    <div class="ribbon-let active">
+                        <div class="ribbon-left"></div>
+                        <div class="ribbon-center">1-{{ 'order.state.alreadyUnderOrder' | translate }}</div><!-- 下单待付款 -->
+                        <div class="ribbon-right"></div>
+                    </div>
+                    <div class="ribbon-cen">
+                        <div class="ribbon-left"></div>
+                        <div class="ribbon-center">2-{{ 'order.state.reviewOrder' | translate }}</div><!-- 订单审核中 -->
+                        <div class="ribbon-right"></div>
+                    </div>
+                    <div class="ribbon-cen">
+                        <div class="ribbon-left"></div>
+                        <div class="ribbon-center">3-{{ 'state.choosingGoods' | translate }}</div><!-- 商品拣选中 -->
+                        <div class="ribbon-right"></div>
+                    </div>
+                    <div class="ribbon-cen">
+                        <div class="ribbon-left"></div>
+                        <div class="ribbon-center">4-{{ 'order.state.beingPackagedOrder' | translate }}</div><!-- 订单包裹中 -->
+                        <div class="ribbon-right"></div>
+                    </div>
+                    <div class="ribbon-rht">
+                        <div class="ribbon-left"></div>
+                        <div class="ribbon-center">5-{{ 'order.state.hadBeenShippedOrder' | translate }}</div><!-- 订单已发货 -->
+                        <div class="ribbon-right"></div>
+                    </div>
+                </div>
+                <div class="display-table mrg20T">
+                    <div class="iscs-border-dotted pull-left width-160" ng-bind="model.vOriginTrade.platformId">
+                    </div>
+                    <div class="iscs-border-dotted pull-left width-160 mrg10L" ng-bind="model.vOriginTrade.shopId">
+                    </div>
+                    <div class="iscs-border-dotted pull-left width-160 mrg10L" ng-bind="model.vOriginTrade.receiverMobile">
+                    </div>
+                    <div class="width-250 pull-left min-height40 text-right ">
+                        <button type="button" class="btn btn-warning">{{ 'order.new' | translate }}</button><!-- 生成系统订单 -->
+                    </div>
+                    <div class="col-md-4 mrg10T line-height28">
+                        <span class="color-8c">{{ 'order.time.order' | translate }}：</span><!-- 下单时间 --><span class="color-444" ng-bind="model.vOriginTrade.orderCreateTime"></span>
+                    </div>
+                    <div class="col-md-4 mrg10T line-height28">
+                        <span class="color-8c">{{ 'order.time.payment' | translate }}：</span><!-- 付款时间 --><span class="color-444" ng-bind="model.vOriginTrade.orderPayTime"></span>
+                    </div>
+                    <div class="col-md-4 mrg10T line-height28">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-4  line-height28">
+                        <span class="color-8c">{{ 'order.time.download' | translate }}：</span><!-- 下载时间 --><span class="color-444" ng-bind="model.vOriginTrade.downTime"></span>
+                    </div>
+                    <div class="col-md-4  line-height28">
+                        <span class="color-8c">{{ 'order.time.formally' | translate }}：</span><!-- 转正时间 --><span class="color-444" ng-bind="model.vOriginTrade.releaseTime"></span>
+                    </div>
+                    <div class="col-md-4  line-height28">
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="display-table border-top mrg10T pad10T line-height28">
+                    <div class="col-md-4 ">
+                        <span class="color-8c">{{ 'order.name.buyersNickname' | translate }}：</span><!-- 买家昵称 --><span class="color-444" ng-bind="model.vOriginTrade.buyerNick"></span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c width-60 text-right display-inlineblock">{{ 'base.phone' | translate }}：</span><!-- 手机 --><span class="color-444" ng-bind="model.vOriginTrade.receiverMobile"></span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">{{ 'base.vipLevel' | translate }}：</span><!-- 会员等级 --><span class="color-444" ng-bind="model.baBuyer.memberLevel"></span>
+                    </div>
+                    <div class="col-md-12 ">
+                        <span class="color-8c">{{ 'base.vipMark' | translate }}：</span><!-- 会员积分 --><span class="color-444" ng-bind="model.baBuyer.memberIntegral"></span>
+                    </div>
+                    <div class="col-md-12 ">
+                        <span class="color-8c pull-left">{{ 'order.note.buyers' | translate }}：</span><!-- 买家留言 -->
+                        <p class="color-444 pull-left mrg5T max-text-p650 " ng-bind="model.vOriginTrade.buyerMessage"></p>
+                    </div>
+                    <div class="col-md-12 ">
+                        <span class="color-8c pull-left">{{ 'order.note.seller' | translate }}：</span><!-- 卖家备注 -->
+                        <p class="color-444 pull-left mrg5T max-text-p650" ng-bind="model.vOriginTrade.sellerMem"></p>
+                    </div>
+                </div>
+                <div class="display-table border-top mrg10T pad10T line-height28">
+                    <div class="col-md-4 ">
+                        <span class="color-8c display-inlineblock">{{ 'order.name.consignee' | translate }}：</span><!-- 收货人 --><span class="color-444" ng-bind="model.vOriginTrade.receiverName"></span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c width-60 text-right display-inlineblock">{{ 'base.phone' | translate }}：</span><!-- 手机 --><span class="color-444" ng-bind="model.vOriginTrade.receiverMobile"></span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c width-60 text-right display-inlineblock">{{ 'base.telephone' | translate }}：</span><!-- 电话 --><span class="color-444" ng-bind="model.vOriginTrade.receiverPhone"></span>
+                    </div>
+                    <div class="col-md-12 ">
+                        <span class="color-8c pull-left">{{ 'base.address' | translate }}：</span><!-- 收货地址 -->
+                        <p class="color-444 pull-left mrg5T max-text-p650 " ng-bind="model.vOriginTrade.receiverAddress"></p>
+                    </div>
+                    <div class="col-md-12 mrg10T pad20A font-size-14 text-bgcolor-especially">
+                        <div class="col-md-3 ">
+                            <span class="color-8c">{{ 'order.amount.commoditySum' | translate }}：</span><!-- 商品总金额 --><span class="color-444" ng-bind="model.vOriginTrade.orderSellerFee"></span>
+                        </div>
+                        <div class="col-md-3 ">
+                            <span class="color-8c width-70 text-right display-inlineblock">+{{ 'base.amount.freight' | translate }}：</span><!-- 运费 --><span class="color-444" ng-bind="model.vOriginTrade.freightFee"></span>
+                        </div>
+                        <div class="col-md-3 ">
+                            <span class="color-8c">{{ 'order.amount.totalOrder' | translate }}：</span><!-- 订单总金额 --><span class="color-444" ng-bind="model.vOriginTrade.totalFee">201530</span>
+                        </div>
+                        <div class="col-md-3 ">
+                            <span class="color-8c">{{ 'order.amount.discount' | translate }}：</span><!-- 优惠及抵扣金额 --><span class="color-444" ng-bind="model.vOriginTrade.discountFee"></span>
+                        </div>
+                        <div class="col-md-3 ">
+                            <span class="color-8c">{{ 'order.amount.totalAccountsPayable' | translate }}：</span><!-- 应付总金额 --><strong class="color-444 color-orange" ng-bind="model.vOriginTrade.orderPayment"></strong>
+                        </div>
+                        <div class="col-md-3 ">
+                            <span class="color-8c">{{ 'order.amount.alreadyPaid' | translate }}：</span><!-- 已付金额 --><strong class="color-444 color-green" ng-bind="model.vOriginTrade.orderPayment"></strong>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab index="1" heading="{{ 'base.productDetail' | translate }}"><!-- 商品详情 -->
+                <div>
+                    <div class="table-commodity-list">
+                        <div class=" min-height60"><img src="images/a0.jpg" width="58" height="58" /></div>
+                        <div class=" min-height60 width-250 pad10L">
+                            <p class="overflow-ellipsis">国家发改委介绍了2016年新型城镇化重点任务，如何推进农民工融入城镇工融入城镇</p>
+                            <p class="color-8c"><span>{{ 'order.information.color' | translate }}：红色</span><!-- 颜色 --><span class="pad10L">{{ 'order.information.specifications' | translate }}：xxxx</span><!-- 规格 --></p>
+                        </div>
+                        <div class=" min-height60 width-180 pad15L">
+                            <p>{{ 'order.information.barCode' | translate }}：XXX11202-05</p><!-- 商品条码 -->
+                        </div>
+                        <div class=" min-height60 width-120 mrg10L">
+                            <p><span class="text-line-through color-8c">{{ 'order.information.originalPrice' | translate }}：108.00</span><!-- 原价 --></br>
+                                <span>{{ 'order.information.strikePrice' | translate }}：<strong class="color-orange">12333.00</strong></span><!-- 成交价 -->
+                            </p>
+                        </div>
+                        <div class=" min-height60 width-120 mrg10L">
+                            <p><span>{{ 'order.information.quantity' | translate }}：108.00</span><!-- 数量 --></br>
+                                <span>{{ 'order.information.inventory' | translate }}：<strong class="color-green">2202</strong></span><!-- 库存分配 -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="table-commodity-list">
+                        <div class=" min-height60"><img src="images/a0.jpg" width="58" height="58" /></div>
+                        <div class=" min-height60 width-250 pad10L">
+                            <p class="overflow-ellipsis">国家发改委介绍了2016年新型城镇化重点任务，如何推进农民工融入城镇工融入城镇</p>
+                            <p class="color-8c"><span>{{ 'order.information.color' | translate }}：红色</span><!-- 颜色 --><span class="pad10L">{{ 'order.information.specifications' | translate }}：xxxx</span><!-- 规格 --></p>
+                        </div>
+                        <div class=" min-height60 width-180 pad15L">
+                            <p>{{ 'order.information.barCode' | translate }}：XXX11202-05</p><!-- 商品条码 -->
+                        </div>
+                        <div class=" min-height60 width-120 mrg10L">
+                            <p><span class="text-line-through color-8c">{{ 'order.information.originalPrice' | translate }}：108.00</span><!-- 原价 --></br>
+                                <span>{{ 'order.information.strikePrice' | translate }}：<strong class="color-orange">12333.00</strong></span><!-- 成交价 -->
+                            </p>
+                        </div>
+                        <div class=" min-height60 width-120 mrg10L">
+                            <p><span>{{ 'order.information.quantity' | translate }}：108.00</span><!-- 数量 --></br>
+                                <span>{{ 'order.information.inventory' | translate }}：<strong class="color-green">2202</strong></span><!-- 库存分配 -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="table-commodity-list">
+                        <div class=" min-height60"><img src="images/a0.jpg" width="58" height="58" /></div>
+                        <div class=" min-height60 width-250 pad10L">
+                            <p class="overflow-ellipsis">国家发改委介绍了2016年新型城镇化重点任务，如何推进农民工融入城镇工融入城镇</p>
+                            <p class="color-8c"><span>{{ 'order.information.color' | translate }}：红色</span><!-- 颜色 --><span class="pad10L">{{ 'order.information.specifications' | translate }}：xxxx</span><!-- 规格 --></p>
+                        </div>
+                        <div class=" min-height60 width-180 pad15L">
+                            <p>{{ 'order.information.barCode' | translate }}：XXX11202-05</p><!-- 商品条码 -->
+                        </div>
+                        <div class=" min-height60 width-120 mrg10L">
+                            <p><span class="text-line-through color-8c">{{ 'order.information.originalPrice' | translate }}：108.00</span><!-- 原价 --></br>
+                                <span>{{ 'order.information.strikePrice' | translate }}：<strong class="color-orange">12333.00</strong></span><!-- 成交价 -->
+                            </p>
+                        </div>
+                        <div class=" min-height60 width-120 mrg10L">
+                            <p><span>{{ 'order.information.quantity' | translate }}：108.00</span><!-- 数量 --></br>
+                                <span>{{ 'order.information.inventory' | translate }}：<strong class="color-green">2202</strong></span><!-- 库存分配 -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="table-commodity-list">
+                        <div class=" min-height60"><img src="images/a0.jpg" width="58" height="58" /></div>
+                        <div class=" min-height60 width-250 pad10L">
+                            <p class="overflow-ellipsis">国家发改委介绍了2016年新型城镇化重点任务，如何推进农民工融入城镇工融入城镇</p>
+                            <p class="color-8c"><span>{{ 'order.information.color' | translate }}：红色</span><!-- 颜色 --><span class="pad10L">{{ 'order.information.specifications' | translate }}：xxxx</span><!-- 规格 --></p>
+                        </div>
+                        <div class=" min-height60 width-180 pad15L">
+                            <p>{{ 'order.information.barCode' | translate }}：XXX11202-05</p><!-- 商品条码 -->
+                        </div>
+                        <div class=" min-height60 width-120 mrg10L">
+                            <p><span class="text-line-through color-8c">{{ 'order.information.originalPrice' | translate }}：108.00</span><!-- 原价 --></br>
+                                <span>{{ 'order.information.strikePrice' | translate }}：<strong class="color-orange">12333.00</strong></span><!-- 成交价 -->
+                            </p>
+                        </div>
+                        <div class=" min-height60 width-120 mrg10L">
+                            <p><span>{{ 'order.information.quantity' | translate }}：108.00</span><!-- 数量 --></br>
+                                <span>{{ 'order.information.inventory' | translate }}：<strong class="color-green">2202</strong></span><!-- 库存分配 -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab index="2" heading="{{ 'base.operationRecord' | translate }}"><!-- 操作记录 -->
+                <iscs-grid grid-config="gridOptions" grid-class="auto-height-modal-table" check-box="false"></iscs-grid>
+            </uib-tab>
+        </uib-tabset>
+        <div class="dialog-right-close" ng-click="event.close()"><i class="fa fa-times"></i></div>
+    </pbody>
+</panel>

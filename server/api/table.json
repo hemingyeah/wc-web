@@ -1,0 +1,20 @@
+[{
+    "page_ukid": "96956856655225",
+    "page_name": "入库查询",
+    "order_seq": 1,
+    "page_desc": "入库查询",
+    "page_url": "pr_receipt_list"
+
+}, {
+    "page_ukid": "96956856655258",
+    "page_name": "订单数据",
+    "order_seq": 2,
+    "page_desc": "订单数据",
+    "page_url": "shopDayStatus"
+}, {
+    "page_ukid": "96956856655241",
+    "page_name": "采购单",
+    "order_seq": 3,
+    "page_desc": "采购单",
+    "page_url": "pr_purchase_list"
+}]

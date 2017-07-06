@@ -1,0 +1,93 @@
+<panel dialog>
+    <phead><span ng-if="!alldata">{{ 'printer.add' | translate }}</span><!-- 新增打印机配置 -->
+        <span ng-if="alldata">{{ 'printer.edit' | translate }}</span><!-- 编辑打印机配置 -->
+    </phead>    
+    <pbody>
+        <div class="display-table pad10A">
+            <div class="text-right line-height30 col-md-4">
+                <span class="color-8c">{{ 'printer.number' | translate }}：</span>
+                <!-- 打印机编号 -->
+            </div>
+            <div class="col-md-6 pad0L">
+                <ui-select ng-model="query.printerName.selected">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <!-- 请选择 -->
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item.name as item in printerId | propsFilter: {name: $select.search}">
+                        <span ng-bind="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="text-right col-md-4 mrg10T">
+                <span class="color-8c">{{ 'printer.billType' | translate }}：</span>
+                <!-- 打印单据类型 -->
+            </div>
+            <div class="col-md-6 mrg10T pad0L">
+                <ui-select ng-model="query.printType.selected">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <!-- 请选择 -->
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item.name as item in printType | propsFilter: {name: $select.search}">
+                        <span ng-bind="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="text-right col-md-4 mrg10T">
+                <span class="color-8c">{{ 'printer.trafficUnit' | translate }}：</span>
+                <!-- 运输单位 -->
+            </div>
+            <div class="col-md-6 mrg10T pad0L">
+                <ui-select multiple ng-model="query.transporterUnitId" close-on-select="false">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <!-- 请选择 -->
+                        {{$item.name}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="item.id as item in transporter | propsFilter: {name: $select.search,udname: $select.search}">
+                        <div ng-bind="item.name | highlight: $select.search"></div>
+                        {{$item.name}}
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="text-right col-md-4 mrg10T">
+                <span class="color-8c">{{ 'printer.operationArea' | translate }}：</span>
+                <!-- 作业区 -->
+            </div>
+            <div class="col-md-6 mrg10T pad0L">
+                <ui-select ng-model="query.workspace.selected">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <!-- 请选择 -->
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item.name as item in workspace | propsFilter: {name: $select.search}">
+                        <span ng-bind="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="text-right col-md-4 mrg10T">
+                <span class="color-8c">{{ 'printer.printType' | translate }}：</span>
+                <!-- 前/后置打印 -->
+            </div>
+            <div class="col-md-6 mrg10T pad0L">
+                <ui-select ng-model="query.frontBackPrinting.selected">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <!-- 请选择 -->
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item.name as item in frontBack | propsFilter: {name: $select.search}">
+                        <span ng-bind="item.name | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+    </pbody>
+    <pfoot>
+        <div style="height: 40px;" class="text-right">
+            <button class="btn btn-success" ng-click="event.save($scope)">{{ 'base.save' | translate }}</button>
+            <!-- 保存 -->
+            <button class="btn btn-default " ng-click="event.close($scope)">{{ 'base.close' | translate }}</button>
+            <!-- 关闭 -->
+        </div>
+    </pfoot>
+</panel>

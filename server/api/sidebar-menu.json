@@ -1,0 +1,163 @@
+{
+    "comment": "系统菜单模拟数据",
+    "code": "0",
+    "msg": "",
+    "data": [{
+        "page_ukid": "96598568585566",
+        "pageName": "基础",
+        "pageUrl": "",
+        "userIdUpdated": "",
+        "programId": "",
+        "dateUpdated": "",
+        "workstationId": "",
+        "parentPageUkid": 0,
+        "systemCode": "",
+        "orderSeq": "",
+        "pageDesc": "",
+        "pageNo": "",
+        "createDate": "2016-04-01 09:02:11",
+        "pageSub": "",
+        "iconId": "iscs-icon-basics",
+        "items": [{
+            "page_ukid": "96598568585558",
+            "pageName": "个人信息",
+            "pageUrl": "personalInfo",
+            "iconId": ""
+        }, {
+            "page_ukid": "96598568585526",
+            "pageName": "基础信息",
+            "pageUrl": "baseInfo",
+            "iconId": ""
+        }, {
+            "page_ukid": "96598568585524",
+            "pageName": "员工管理",
+            "pageUrl": "staffManage",
+            "iconId": ""
+        }, {
+            "page_ukid": "96598568585523",
+            "pageName": "菜单管理",
+            "pageUrl": "menuManage",
+            "iconId": ""
+        }, {
+
+            "page_ukid": "96598568585525",
+            "pageName": "打印模板",
+            "pageUrl": "print",
+            "iconId": ""
+        }, {
+
+            "page_ukid": "96598568585529",
+            "pageName": "打印机设置",
+            "pageUrl": "printer",
+            "iconId": ""
+        }, {
+
+            "page_ukid": "96598568585511",
+            "pageName": "字典管理",
+            "pageUrl": "dicMgr",
+            "iconId": ""
+        }, {
+            "page_ukid": "965985685823556",
+            "pageName": "原始订单管理",
+            "pageUrl": "originOrder",
+            "iconId": ""
+        }, {
+            "page_ukid": "965856954555656",
+            "pageName": "平台退款单",
+            "pageUrl": "refundOrder",
+            "iconId": ""
+        }, {
+            "page_ukid": "965856954555656",
+            "pageName": "仓库需求预测",
+            "pageUrl": "demandForecast",
+            "iconId": ""
+        },{
+            "page_ukid": "965856954555656",
+            "pageName": "预测结果报表",
+            "pageUrl": "demandForecastReport",
+            "iconId": ""
+        }, {
+            "page_ukid": "965856954559876",
+            "pageName": "表格示例",
+            "pageUrl": "table",
+            "iconId": ""
+        }, {
+            "page_ukid": "965856954559423",
+            "pageName": "产能报表",
+            "pageUrl": "capacity",
+            "iconId": ""
+        }]
+    },{
+        "page_ukid": "96598568585565",
+        "pageName": "订单",
+        "pageUrl": "",
+        "userIdUpdated": "",
+        "programId": "",
+        "dateUpdated": "",
+        "workstationId": "",
+        "parentPageUkid": 9,
+        "systemCode": "",
+        "orderSeq": "",
+        "pageDesc": "",
+        "pageNo": "",
+        "createDate": "2016-04-01 09:02:11",
+        "pageSub": "",
+        "iconId": "iscs-icon-order",
+        "items": [{
+            "page_ukid": "965856954559422",
+            "pageName": "订单列表",
+            "pageUrl": "order",
+            "iconId": ""
+        }]
+    },{
+        "page_ukid": "96598568585325",
+        "pageName": "库存",
+        "pageUrl": "",
+        "userIdUpdated": "",
+        "programId": "",
+        "dateUpdated": "",
+        "workstationId": "",
+        "parentPageUkid": 8,
+        "systemCode": "",
+        "orderSeq": "",
+        "pageDesc": "",
+        "pageNo": "",
+        "createDate": "2016-08-01 09:02:11",
+        "pageSub": "",
+        "iconId": "iscs-icon-stock",
+        "items": [{
+            "page_ukid": "965856954559429",
+            "pageName": "补货建议",
+            "pageUrl": "replenishment",
+            "iconId": ""
+        },{
+            "page_ukid": "965856954559430",
+            "pageName": "供需匹配",
+            "pageUrl": "supplyMatching",
+            "iconId": ""
+        }]
+    },{
+        "page_ukid": "96598568585365",
+        "pageName": "任务",
+        "pageUrl": "",
+        "userIdUpdated": "",
+        "programId": "",
+        "dateUpdated": "",
+        "workstationId": "",
+        "parentPageUkid": 9,
+        "systemCode": "",
+        "orderSeq": "",
+        "pageDesc": "",
+        "pageNo": "",
+        "createDate": "2016-08-15 09:02:11",
+        "pageSub": "",
+        "iconId": "iscs-icon-bill",
+        "items": [{
+            "page_ukid": "965856954559422",
+            "pageName": "任务",
+            "pageUrl": "taskList",
+            "iconId": ""
+        }]
+    }]
+
+}

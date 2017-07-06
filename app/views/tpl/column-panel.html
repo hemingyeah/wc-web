@@ -1,0 +1,11 @@
+<div id="toolPanel" ng-show="flag" style="background-color: #e3e3e3;width: 200px; position: absolute;top:0px;right:0px;">
+	<p class="mrg5T" ng-repeat="column in columns">
+		<label class="checkbox-inline c-checkbox" style="text-align: center;">
+			<input type="checkbox" ng-change="change(column)" ng-model="column.checked" value="option2">
+			<span class="fa fa-check"></span>
+			{{column.headerName | translate}}
+		</label>
+	</p>
+	<button class="btn btn-success" ng-click="save()">保存</button>
+	<button class="btn btn-default" ng-click="close()">关闭</button>
+</div>

@@ -1,0 +1,123 @@
+<panel dialog>
+    <pbody >
+        <uib-tabset class="iscs-table-tab" active="activeForm">
+            <uib-tab index="0" heading="退款单详情">
+               <div class="div-center mrg20T dialog-progress" >
+                    <div class="ribbon-let active width-280" >
+                        <div class="ribbon-left"></div>
+                        <div class="ribbon-center width-200 text-center" >1-待处理</div>
+                        <div class="ribbon-right"></div>
+                    </div>
+                    <div class="ribbon-cen width-280" >
+                        <div class="ribbon-left"></div>
+                        <div class="ribbon-center width-200 text-center" >2-已处理</div>
+                        <div class="ribbon-right"></div>
+                    </div>
+                    <div class="ribbon-rht width-280" >
+                        <div class="ribbon-left"></div>
+                        <div class="ribbon-center width-200 text-center" >3-处理完成</div>
+                        <div class="ribbon-right"></div>
+                    </div>
+                </div>
+                <div class="display-table">
+                    <div class="col-md-12 font-size-14 mrg10T line-height28">
+                        <strong>商品信息</strong>
+                    </div>
+                    <div class="pull-left">
+                        <div class="table-commodity-list">
+                            <div class=" min-height60"><img src="images/a0.jpg" width="58" height="58" /></div>
+                            <div class=" min-height60 pad10L" style="width:415px;">
+                                <p class="overflow-ellipsis">国家发改委介绍了2016年新型城镇化重点任务，如何推进农民工融入城镇工融入城镇</p>
+                                <p class="color-8c">
+                                    <span>规格：红色</span>
+                                    <span class="pad10L">规格ID：xxxx</span>
+                                    <span class="pad10L">数字ID：XXX11202-05</span>
+                                </p>
+                            </div>
+                            <div class=" min-height60 width-150 mrg10L">
+                                <p><span>交易金额：108.00</span></br>
+                                    <span>卖家支付金额：12333.00</span>
+                                </p>
+                            </div>
+                            <div class=" min-height60 width-120 mrg10L">
+                                <p><span>运费：108.00</span></br>
+                                    <span>退款金额：<strong class="color-orange">2202</strong></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="display-table mrg10T pad10T line-height28">
+                     <div class="col-md-12 font-size-14">
+                        <strong>退款单基本信息</strong>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">售后类型：</span><span class="color-444">2015-05-05 80:30</span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">店铺：</span><span class="color-444">2015-05-05 80:30</span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">退款原因：</span><span class="color-444">2015-05-05 80:30</span>
+                    </div>
+                    <div class="col-md-12 ">
+                        <span class="color-8c pull-left">退款说明：</span>
+                        <p class="color-444 pull-left mrg5T max-text-p650 ">环保部与江苏省政府组成的联合调查组抵达江苏常州，并于下午1点在常州市外家长正在检查学生的体检报告.江苏省政府组成的联合调查组抵达江苏常州，并于下午1点在常州市外家长正在检查学生的体检报</p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">买家昵称：</span><span class="color-444">2015-05-05 80:30</span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">手机：</span><span class="color-444">2015-05-05 80:30</span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">买家姓名：</span><span class="color-444">2015-05-05 80:30</span>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="color-8c">申请时间：</span><span class="color-444">2015-05-05 80:30</span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">审核时间：</span><span class="color-444">2015-05-05 80:30</span>
+                    </div>
+                    <div class="col-md-4 ">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">下载时间：</span><span class="color-444">2015-05-05 80:30</span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">更新时间：</span><span class="color-444">2015-05-05 80:30</span>
+                    </div>
+                    <div class="col-md-4 ">
+                        &nbsp;
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab index="1" heading="操作记录">
+                <iscs-grid grid-config="gridOptions" grid-class="auto-height-modal-table" ></iscs-grid>
+            </uib-tab>
+            <uib-tab index="2" heading="图片裁切">
+                 <form name="myForm">
+                    <div>图片裁切上传功能</div>
+                    <button ngf-select ng-model="picFile" accept="image/*">
+                        选择图片</button>
+                    <div ngf-drop ng-model="picFile" ngf-pattern="image/*" class="iscs-cropArea">
+                        <img-crop image="picFile  | ngfDataUrl" result-image="croppedDataUrl" ng-init="croppedDataUrl=''"></img-crop>
+                    </div>
+                    <div>
+                        <img ng-src="{{croppedDataUrl}}" />
+                    </div>
+                    <button ng-click="upload(croppedDataUrl, picFile.name)">提交</button> 
+                    <span class="progress" ng-show="progress >= 0">
+                        <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
+                    </span>
+                    <span ng-show="result">Upload Successful
+                        <img ng-src="{{result}}" />
+                    </span>
+                    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+                </form>
+            </uib-tab>
+        </uib-tabset>
+        <div class="dialog-right-close" ng-click="event.close()"><i class="fa fa-times"></i></div>
+    </pbody>
+</panel>

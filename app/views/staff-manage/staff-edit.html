@@ -1,0 +1,28 @@
+<panel dialog>
+    <phead><span>新增【字典】</span></phead>
+    <pbody>
+        <form gtform name='form'>
+            <form-row colspan="2" Label="名称">
+                <text-box ngmodel="model.definedName"></text-box>
+            </form-row>
+            <form-row colspan="2" Label="编码">
+                <text-box ngmodel="model.definedCode"></text-box>
+            </form-row>
+            <form-row colspan="2" Label="类型">
+                <text-box ngmodel="model.definedCodeType"></text-box>
+            </form-row>
+            <form-row colspan="2" Label="描述">
+                <text-box ngmodel="model.definedDesc"></text-box>
+            </form-row>
+            <form-row colspan="2" Label="排序">
+                <text-box ngmodel="model.displaySeq"></text-box>
+            </form-row>
+        </form>
+    </pbody>
+    <pfoot>
+        <div style="height: 30px;">
+            <button class="btn btn-info" ng-click="event.save()">保存</button>
+            <button class="btn btn-default" ng-click="event.close()">关闭</button>
+        </div>
+    </pfoot>
+</panel>

@@ -1,0 +1,47 @@
+{
+  "name": "iscs",
+  "version": "1.0.0",
+  "description": "angularjs 三号前端",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@192.168.6.115:7999/dev/web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "http://192.168.6.115:7990/scm/dev/web.git"
+  },
+  "homepage": "http://192.168.6.115:7990/scm/dev/web.git",
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "compression": "^1.6.2",
+    "connect-history-api-fallback": "^1.1.0",
+    "connect-modrewrite": "^0.9.0",
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^1.8.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^3.2.0",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-if": "^2.0.0",
+    "gulp-less": "^3.0.5",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.0.7",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-rev": "^7.0.0",
+    "gulp-rev-collector": "^1.0.3",
+    "gulp-sequence": "^0.4.5",
+    "gulp-uglify": "^1.5.3",
+    "gulp-usemin": "^0.3.21",
+    "gulp-watch": "^4.3.5",
+    "opn": "^4.0.1",
+    "qiniu": "^6.1.11",
+    "yargs": "^4.6.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "iscs_usd",
+  "version": "1.0.0",
+  "description": "api文档",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+http://192.168.6.115:7990/scm/dev/web.git"
+  },
+  "author": "anytao",
+  "license": "ISC",
+  "bugs": {
+    "url": "http://192.168.6.115:7990/scm/dev/web.git"
+  },
+  "homepage": "http://192.168.6.115:7990/scm/dev/web.git#readme",
+  "dependencies": {
+    "bufferhelper": "^0.2.0",
+    "commander": "^2.5.0",
+    "config": "^1.7.0",
+    "handlebars": "^2.0.0",
+    "marked": "^0.3.2",
+    "minimist": "^1.2.0",
+    "object-assign": "^1.0.0",
+    "open": "0.0.5",
+    "shelljs": "^0.3.0"
+  }
+}

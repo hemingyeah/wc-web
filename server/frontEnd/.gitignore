@@ -1,0 +1,5 @@
+node_modules
+$preview
+/typings/
+document/*.html
+!document/index.html

@@ -1,0 +1,201 @@
+<div class="iscs-view-left" ng-hide="viewLeft">
+    <div class="iscs-view-left-center">
+        <div class="pad10A iscs-seach-id">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="交易号/收货人" />
+                <span class="input-group-btn">
+                <button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="pad10A pad30B">
+            
+            <div class="form-group">
+                <div class="color-666 line-height24 pad3L font-size-12">
+                    收件人姓名：
+                </div>
+                <input type="text" class="form-control" placeholder="买家昵称" />
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    收件人手机号：
+                </div>
+                <input type="text" class="form-control" placeholder="收件人姓名" />
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    下单时间：
+                </div>
+                <div class=" mrg5B">
+                    <adm-dtp ng-model="date11" full-data="date11_detail" maxdate="{{date12_detail.unix}}"></adm-dtp>
+
+                </div>
+                <div ng-bind="date11">
+                </div>
+                <div >
+                    <adm-dtp ng-model="date12" full-data="date12_detail" mindate="{{date11_detail.unix}}"></adm-dtp>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    付款时间：
+                </div>
+                <div class="mrg5B">
+                    <adm-dtp ng-model='date3' ></adm-dtp>
+                </div>
+                <div>
+                    <adm-dtp ng-model='date4' ></adm-dtp>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    店铺：
+                </div>
+                <ui-select my-ui-select ng-model="selected.value">
+                    <ui-select-match>
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in itemArray track by item.id">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+               
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    订单状态：
+                </div>
+                <div class="pad10A bg-white boder-all">
+                    <p>
+                        <label class="checkbox-inline c-checkbox">
+                            <input type="checkbox" >
+                            <span class="fa fa-check"></span>
+                            待审核
+                        </label>
+                    </p>
+                    <p class="mrg5T">
+                        <label class="checkbox-inline c-checkbox">
+                            <input type="checkbox" >
+                            <span class="fa fa-check"></span>
+                            等待客服审核
+                        </label>
+                    </p>
+                    <p class="mrg5T">
+                        <label class="checkbox-inline c-checkbox">
+                            <input type="checkbox" >
+                            <span class="fa fa-check"></span>
+                            等待客服审核
+                        </label>
+                    </p>
+                    <p class="mrg5T">
+                        <label class="checkbox-inline c-checkbox">
+                            <input type="checkbox" >
+                            <span class="fa fa-check"></span>
+                            等待快递审核
+                        </label>
+                    </p>
+                    <p class="mrg5T">
+                        <label class="checkbox-inline c-checkbox">
+                            <input type="checkbox" >
+                            <span class="fa fa-check"></span>
+                            待发货
+                        </label>
+                    </p>
+                    <p class="mrg5T">
+                        <label class="checkbox-inline c-checkbox">
+                            <input type="checkbox" >
+                            <span class="fa fa-check"></span>
+                            已发货
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="iscs-seach-forward">
+                    <a class="pave"><i class="fa fa-angle-left"></i></a>
+                    <a class="next"><i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            <div class="seach-btn-main">
+                <button type="submit" class="btn btn-warning" ng-click="test()">查询</button>
+                <input type="button" class="btn btn-info" value="保存"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-class="{true: 'iscs-view-right', false: 'mrg0L'}[viewRight]">
+    <div class="display-table mrg10T mrg10B" >
+        <i class="iscs-view-btn fa " ng-class="{true: 'fa-dedent', false: 'fa-indent'}[viewIcon]" ng-click="searchToggle()" ></i>
+        <button class="btn btn-success pull-left" ng-click="alertadd()" ><i class="fa fa-plus mrg5R"></i>新增</button>
+         <button class="btn btn-warning pull-left mrg5L" ng-click="detail()" ><i class="fa fa-pencil mrg5R"></i>编辑</button>
+         <button class="btn btn-info pull-left mrg5L" >保存</button>
+         <button class="btn btn-default pull-left mrg5L" ><i class="fa fa-trash-o mrg5R"></i>万能</button>
+         
+         <div class="pull-left mrg10L">
+            <label class="checkbox-inline c-checkbox">
+                <input type="checkbox" >
+                <span class="fa fa-check"></span>
+                复选框样式
+            </label>
+         </div>
+         
+         
+         <div class="pull-left mrg10L">
+             <label class="radio-inline c-radio">
+                <input type="radio" checked="checked" name="i-radio">
+                <span class="fa fa-check"></span>单选a</label>
+            <label class="radio-inline c-radio">
+                <input type="radio"  name="i-radio" >
+                <span class="fa fa-check"></span>单选b</label>
+            <label class="radio-inline c-radio">
+                <input type="radio"  name="i-radio" >
+                <span class="fa fa-check"></span>单选c</label>
+         </div>
+          <div class="pull-left mrg10L">
+             <label class="switch switch-sm">
+             <input type="checkbox" ng-model="kaiguan" checked="checked">
+             <span ></span>
+             </label>
+             <label class="switch ">
+             <input type="checkbox" checked="checked">
+             <span></span>
+             </label>
+         </div>         
+         <div class="dropdown pull-right mrg20R" uib-dropdown>
+             <button class="btn btn-default dropdown-toggle mrg5L " uib-dropdown-toggle><i class="fa fa-cog color-8c"></i></button>
+            <!-- dropdown -->
+            <ul class="dropdown-menu animated fadeInRight font-size-12">
+              <li>
+                <a >分配客服规则</a>
+              </li>
+              <li>
+                <a >生成销退单规则</a>
+              </li>
+            </ul>
+            <!-- / dropdown -->
+          </div>
+    </div>
+    <iscs-grid grid-config="gridOptions" grid-class="auto-height-table" no="false"></iscs-grid>
+</div>
+ <!--check-box="false"
+                
+     <div class="well">
+    <div>
+        <div style="float:right;">
+            <button ng-click="btnUpload()">Upload</button>
+            <button ng-click="btnClean()">Remove all</button>
+        </div>
+        <input type="file" id="file1" multiple/>
+    </div>
+    <div ng-repeat="file in files" style="margin-top: 10px;border-bottom: #ccc solid 1px;">
+        <div>
+            <span>{{file.name}}</span>
+            <div style="float:right;">
+                <span>{{file.humanSize}}</span>
+                <a ng-click="btnRemove(file)" title="Remove from list to be uploaded"><i class="icon-remove"></i></a>
+            </div>
+        </div>
+        <!--<progress style="width:400px;" value="{{file.loaded}}" max="{{file.size}}"></progress>
+        <uib-progressbar style="width:400px;" max="100" value="100"><span style="color:white; white-space:nowrap;">100 / 100</span></uib-progressbar>
+    </div>
+</div>-->

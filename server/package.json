@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "connect-multiparty": "^2.0.0",
+    "express": "^4.13.4",
+    "socket.io": "^1.4.6"
+  }
+}

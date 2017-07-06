@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trade>
+  <seller_nick>我在测试</seller_nick>
+  <pic_path>http://img08.taobao.net/bao/uploaded/i8/T1jVXXXePbXXaoPB6a_091917.jpg</pic_path>
+  <payment>200.07</payment>
+  <seller_rate>true</seller_rate>
+  <post_fee>200.07</post_fee>
+  <consign_time>2000-01-01 00:00:00</consign_time>
+  <order_tax_fee>0</order_tax_fee>
+  <tid>2231958349</tid>
+  <num>1</num>
+  <num_iid>3424234</num_iid>
+  <status>TRADE_NO_CREATE_PAY</status>
+  <title>麦包包</title>
+  <type>fixed(一口价)</type>
+  <price>200.07</price>
+  <discount_fee>200.07</discount_fee>
+  <total_fee>200.07</total_fee>
+  <created>2000-01-01 00:00:00</created>
+  <pay_time>2000-01-01 00:00:00</pay_time>
+  <modified>2000-01-01 00:00:00</modified>
+  <end_time>2000-01-01 00:00:00</end_time>
+  <buyer_message>要送的礼物的，不要忘记的哦</buyer_message>
+  <buyer_memo>上衣要大一号</buyer_memo>
+  <seller_memo>好的</seller_memo>
+  <buyer_nick>我在测试</buyer_nick>
+  <shipping_type>free</shipping_type>
+  <adjust_fee>200.07</adjust_fee>
+  <buyer_rate>true</buyer_rate>
+  <orders>
+    <order>
+      <item_meal_name>M8原装电池:便携支架:M8专用座充:莫凡保护袋</item_meal_name>
+      <outer_iid>152e442aefe88dd41cb0879232c0dcb0</outer_iid>
+      <oid>2231958349</oid>
+      <status>TRADE_NO_CREATE_PAY</status>
+      <title>山寨版测试机器</title>
+      <sku_id>5937146</sku_id>
+      <num>2</num>
+    </order>
+	<order>
+      <item_meal_name>M8原装电池:便携支架:M8专用座充:莫凡保护袋2</item_meal_name>
+      <outer_iid>152e442aefe88dd41cb0879232c0dcb0</outer_iid>
+      <oid>2231958349</oid>
+      <status>TRADE_NO_CREATE_PAY</status>
+      <title>山寨版测试机器</title>
+      <sku_id>5937146</sku_id>
+      <num>2</num>
+    </order>
+  </orders>
+  <eticket_service_addr>地址信息</eticket_service_addr>
+  <o2o_et_order_id>193753681999224</o2o_et_order_id>
+</trade>

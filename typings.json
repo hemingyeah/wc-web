@@ -1,0 +1,37 @@
+{
+  "ambientDevDependencies": {
+    "connect-modrewrite": "registry:dt/connect-modrewrite#0.0.0+20160316155526",
+    "gulp": "registry:dt/gulp#3.8.0+20160316155526",
+    "gulp-concat": "registry:dt/gulp-concat#0.0.0+20160316155526",
+    "gulp-htmlmin": "registry:dt/gulp-htmlmin#1.3.0+20160316155526",
+    "gulp-if": "registry:dt/gulp-if#0.0.0+20160316155526",
+    "gulp-less": "registry:dt/gulp-less#0.0.0+20160316155526",
+    "gulp-minify-css": "registry:dt/gulp-minify-css#0.0.0+20160316155526",
+    "gulp-nodemon": "registry:dt/gulp-nodemon#0.0.0+20160316155526",
+    "gulp-rename": "registry:dt/gulp-rename#0.0.0+20160316155526",
+    "gulp-rev": "registry:dt/gulp-rev#5.0.1+20160316155526",
+    "gulp-uglify": "registry:dt/gulp-uglify#0.0.0+20160316155526",
+    "gulp-watch": "registry:dt/gulp-watch#4.1.1+20160316155526",
+    "opn": "registry:dt/opn#3.0.2+20160316155526",
+    "yargs": "registry:dt/yargs#0.0.0+20160326124407"
+  },
+  "ambientDependencies": {
+    "angular": "registry:dt/angular#1.5.0+20160509150441",
+    "angular-animate": "registry:dt/angular-animate#1.5.0+20160407085121",
+    "angular-cookies": "registry:dt/angular-cookies#1.4.0+20160317120654",
+    "angular-resource": "registry:dt/angular-resource#1.5.0+20160412142209",
+    "angular-sanitize": "registry:dt/angular-sanitize#1.3.0+20160317120654",
+    "angular-translate": "registry:dt/angular-translate#2.4.0+20160505162438",
+    "angular-ui-router": "registry:dt/angular-ui-router#1.1.5+20160514162931",
+    "bootstrap": "registry:dt/bootstrap#3.3.5+20160316155526",
+    "jquery": "registry:dt/jquery#1.10.0+20160417213236",
+    "lodash": "registry:dt/lodash#3.10.0+20160330154726",
+    "ng-i18next": "registry:dt/ng-i18next#0.3.6+20160319103745",
+    "ngstorage": "registry:dt/ngstorage#0.3.10+20160417130404",
+    "node": "registry:dt/node#6.0.0+20160514165920",
+    "oclazyload": "registry:dt/oclazyload#0.0.0+20160317120654",
+    "socket.io-client": "registry:dt/socket.io-client#1.4.4+20160317120654",
+    "toastr": "registry:dt/toastr#2.1.1+20160510010435",
+    "ui-select": "registry:dt/ui-select#0.13.2+20160317120654"
+  }
+}

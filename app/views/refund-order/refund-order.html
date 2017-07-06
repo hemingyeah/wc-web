@@ -1,0 +1,169 @@
+<div class="iscs-view-left" ng-hide="viewLeft">
+    <div class="iscs-view-left-center">
+        <div class="pad10A iscs-seach-id">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="{{ 'order.number.refund' | translate }}/{{ 'order.number.transaction' | translate }}/{{ 'order.number.childTransaction' | translate }}" />
+                <!-- 退款单/交易单/子交易单 -->
+                <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="event.quickSearch()"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="pad10A pad30B">
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">{{ 'order.name.buyersNickname' | translate }}：</div>
+                <!-- 买家昵称 -->
+                <input type="text" ng-model="refundOrderCtrl.query.buyerNick" class="form-control" placeholder="{{ 'order.name.buyersNickname' | translate }}">
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    {{ 'order.name.consignee' | translate }}：
+                </div>
+                <!-- 收货人 -->
+                <input type="text" ng-model="refundOrderCtrl.serach.buyerUserName" class="form-control" placeholder="{{ 'order.name.consignee' | translate }}" />
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    {{ 'base.phone' | translate }}：
+                </div>
+                <!-- 手机 -->
+                <input type="text" ng-model="refundOrderCtrl.query.buyerMobile" class="form-control" placeholder="{{ 'base.phone' | translate }}" />
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    {{ 'base.shop' | translate }}：
+                </div>
+                <!-- 店铺 -->
+                <ui-select ng-model="refundOrderCtrl.query.shopList.selected">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <!-- 请选择 -->
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (shopData | filter: $select.query) track by item.id">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    {{ 'state.platformTrade' | translate }}：
+                </div>
+                <!-- 平台交易状态 -->
+                <ui-select ng-model="refundOrderCtrl.query.orderStatusSelected.selected">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <!-- 请选择 -->
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (orderStatusData | filter: $select.query) track by item.id">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    {{ 'state.goods' | translate }}：
+                </div>
+                <!-- 货物状态 -->
+                <ui-select ng-model="refundOrderCtrl.query.goodStatusSelected.selected">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <!-- 请选择 -->
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (goodStatusData | filter: $select.query) track by item.id">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    {{ 'state.iscsWarehouse' | translate }}：
+                </div>
+                <!-- 网仓入库状态 -->
+                <ui-select ng-model="refundOrderCtrl.query.iscsReceiptStatusSelected.selected">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <!-- 请选择 -->
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (iscsReceiptStatusData | filter: $select.query) track by item.id">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    {{ 'order.time.applyRefund' | translate }}：
+                </div>
+                <!-- 申请退款时间 -->
+                <ui-select ng-model="refundOrderCtrl.query.refundCreateTimeSelected.selected">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <!-- 请选择 -->
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (queryByTimeData | filter: $select.query) track by item.id">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    {{ 'order.time.buyersReturn' | translate }}：
+                </div>
+                <!-- 买家寄回时间 -->
+                <ui-select ng-model="refundOrderCtrl.query.buyerReturnTimeSelected.selected">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <!-- 请选择 -->
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (queryByTimeData | filter: $select.query) track by item.id">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    {{ 'order.time.download' | translate }}：
+                </div>
+                <!-- 下载时间 -->
+                <ui-select ng-model="refundOrderCtrl.query.downTimeSelected.selected">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <!-- 请选择 -->
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (queryByTimeData | filter: $select.query) track by item.id">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    {{ 'order.time.update' | translate }}：
+                </div>
+                <!-- 更新时间 -->
+                <ui-select ng-model="refundOrderCtrl.query.modifyTimeSelected.selected">
+                    <ui-select-match placeholder="{{ 'base.pleaseSelect' | translate }}">
+                        <!-- 请选择 -->
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (queryByTimeData | filter: $select.query) track by item.id">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="seach-btn-main">
+                <button type="submit" class="btn btn-warning" ng-click="event.search()">{{ 'base.search' | translate }}</button>
+                <!-- 查询 -->
+                <input type="text" class="btn btn-info" value="{{ 'base.save' | translate }}">
+                <!-- 保存 -->
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-class="{true: 'iscs-view-right', false: 'mrg0L'}[viewRight]">
+    <div class="display-table mrg10B mrg10T">
+        <i class="iscs-view-btn fa " ng-class="{true: 'fa-dedent', false: 'fa-indent'}[viewIcon]" ng-click="searchToggle()"></i>
+        <iscs-button></iscs-button><!-- 按钮组 -->
+    </div>
+    <div class="table-height-lg">
+        <iscs-grid grid-config="gridOptions" grid-class="auto-height-table" no="false"></iscs-grid>
+    </div>
+</div>

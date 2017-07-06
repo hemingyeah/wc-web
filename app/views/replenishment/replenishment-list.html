@@ -1,0 +1,36 @@
+<div class="iscs-view-left" ng-hide="viewLeft">
+    <div class="iscs-view-left-center">
+        <div class="pad10A pad30B">
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                   建议补货日期
+                </div>
+                <!-- 建议补货日期 -->
+                <div class="input-group mrg5B" datepick>
+                    <adm-dtp ng-model="query.orderCreateTimeFrom" full-data="date22_detail" options="{freezeInput:'false'}" mindate="{{date20_detail.unix}}" maxdate="{{date21_detail.unix}}">
+                    </adm-dtp>
+                </div>
+                <div class="input-group" datepick>
+                    <adm-dtp ng-model="query.orderCreateTimeTo" full-data="date21_detail" options="{freezeInput:'false'}" mindate="{{date22_detail.unix}}" maxdate="{{date23_detail.unix}}">
+                    </adm-dtp>
+                </div>
+                <div class="display-none">
+                    <adm-dtp ng-model="query.orderCreateTimeToMax" full-data="date23_detail"></adm-dtp>
+                    <adm-dtp ng-model="query.orderCreateTimeToMin" full-data="date20_detail"></adm-dtp>
+                </div>
+            </div>
+            <div class="seach-btn-main">
+                <button type="submit" class="btn btn-warning" ng-click="event.search($scope)">{{ 'base.search' | translate }}</button>
+                <!-- 查询 -->
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-class="{true: 'iscs-view-right', false: 'mrg0L'}[viewRight]">
+    <div class="display-table mrg10B mrg10T">
+        <i class="iscs-view-btn fa " ng-class="{true: 'fa-dedent', false: 'fa-indent'}[viewIcon]" ng-click="searchToggle()"></i>
+        <iscs-button></iscs-button>
+        <!-- 按钮组 -->
+    </div>
+    <iscs-grid grid-config="gridOptions" grid-class="auto-height-table" no="false"></iscs-grid>
+</div>

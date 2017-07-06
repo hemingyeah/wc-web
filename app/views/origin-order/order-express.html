@@ -1,0 +1,32 @@
+<panel dialog>
+    <phead>
+        {{ 'base.designatedExpress' | translate }}
+        <div class="dialog-right-close" ng-click="event.close()"><i class="fa fa-times"></i></div>
+    </phead>
+    <pbody>
+        <div class="display-table pad30A express-set">
+            <label ng-repeat="model in expressModel" class="display-block mrg10B {{model.class}}" ng-click="event.selectValue(model,model.selectedUnit,model.selectedPosition,$event)">
+                <span class="fa fa-check-circle-o color-orange pull-left mrg15T"></span>
+                <div class="pull-left mrg25L mrg45R express-img {{model.expressIcon}}" title="{{model.name}}" ></div>
+                <div class="pull-left width-180 select-top mrg45L">
+                    <div ng-show="model.Unit" ng-model="model.selectedUnit" ng-repeat="item in model.data" class="mrg5T">{{item.fenname}}</div>
+                    <select ng-show="!model.Unit"  ng-model="model.selectedUnit" ng-options="item.fenname for item in model.data" class="form-control width-150">
+                        <option value="">请选择</option>
+                    </select>
+                </div>
+                <div class="pull-left width-180 select-top">
+                    <div ng-show="model.selectedUnit.typename.length == 1" ng-model="model.selectedPosition" ng-repeat="unit in model.selectedUnit.typename" class="mrg5T">{{unit.lalaname}}</div>
+                    <select ng-show="model.selectedUnit.typename.length > 1"  ng-model="model.selectedPosition" ng-options="unit.lalaname for unit in model.selectedUnit.typename" class=" form-control width-150" >
+                        <option value="">请选择</option>
+                    </select>
+                </div>
+            </label>
+        </div>
+    </pbody>
+    <pfoot>
+        <div style="height: 40px;" class="text-right">
+            <button class="btn btn-warning" ng-click="event.save()">{{ 'base.save' | translate }}</button>
+            <button class="btn btn-default" ng-click="event.close()">{{ 'base.close' | translate }}</button><!-- 关闭 -->
+        </div>
+    </pfoot>
+</panel>

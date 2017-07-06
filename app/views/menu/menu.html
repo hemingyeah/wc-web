@@ -1,0 +1,17 @@
+<ul class="nav gtnav">
+    <li ng-repeat="menu in menuList track by $index" class="iscs-menu-one">
+        <a href class="auto ">
+            <span class="text-muted">
+                <i class="{{menu.iconId}}"></i>
+            </span>
+            <span ng-bind="menu.pageName"></span>
+        </a>
+        <ul class="nav nav-sub dk" ng-if="menu.items.length">
+            <li ui-sref-active="active" ng-repeat="child in menu.items">
+                <a  ng-click="addTab(child, $event)">
+                    <span ng-bind="child.pageName"></span>
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>

@@ -1,0 +1,12 @@
+ {
+     "data": [{
+         "id": "searchBtn",
+         "havePower": "true"
+     }, {
+         "id": "alertBtn",
+         "havePower": "true"
+     }, {
+         "id": "addBtn",
+         "havePower": "false"
+     }]
+ }

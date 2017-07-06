@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" lang="zh_CN" id="data-ng-app" data-ng-app="app">
+
+<head>
+    <meta charset="utf-8" http-equiv="Content-Type" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="电商仓储系统解决方案,电商代发货,淘宝大卖家仓储,第三方仓储物流配送,浙江网仓科技有限公司,电商仓储物流服务商网仓,第三方物流,第三方仓储,仓储,电商物流,电商仓储,B2C电商仓储管理,电商仓库,浙江网仓科技">
+    <meta name="description" content="浙江网仓科技有限公司是一家专业第三方仓储配送企业，旨在为电商提供专业的物流仓储系统及配送服务的全供应链解决方案,电商仓储物流服务商网仓,第三方物流,第三方仓储_仓储,电子商务,代发货,电商物流,电商仓储,B2C电商仓储管理,电商仓库.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title ng-bind="app.name||'网仓3号'"></title>
+    <link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
+    <base href="/">
+
+    <link rel="stylesheet" type="text/css" href="styles/iscs-css.css" />
+    <!-- build:css lib/css/lib.min.css -->
+    <link rel="stylesheet" href="styles/ag-grid/theme-fresh.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome.min.css" />
+    <link rel="stylesheet" href="bower-components/ui-select/dist/select.css">
+    <link rel="stylesheet" href="bower-components/adm-dtp/dist/ADM-dateTimePicker.css">
+    <link rel="stylesheet" href="bower-components/AngularJS-Toaster/toaster.css">
+    <link rel="stylesheet" href="bower-components/ng-img-crop/compile/minified/ng-img-crop.css">
+    <!-- endbuild -->
+</head>
+
+<body ng-controller="AppCtrl">
+    <!-- 表格样式-->
+    <div class="iscsloading">
+        <div class="panel panel-default">
+            <div class="panel-body whirl double-up">
+            </div>
+        </div>
+    </div>
+    <div class="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view></div>
+
+    <script src="lib/js/vendor.js"></script>
+    <script src="lib/js/echarts-all.js"></script>
+    <script src="lib/js/iscs-theme.js"></script>
+    <script src="lib/js/ng-echarts.js"></script>
+    <script src="lib/js/toaster.js"></script>
+    <script src="lib/js/socket.io.js"></script>
+    <!--<script src="http://127.0.0.1:8082/isteven-multi-select.js"></script>-->
+    <!-- app -->
+    <script src="scripts/templates.js"></script>
+    <script src="views/templates-cache.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/main.js"></script>
+
+    <script src="scripts/directives/iscs-directive.js"></script>
+    <script src="scripts/services/iscs-service.js"></script>
+    <script src="scripts/filters/iscs-filter.js"></script>
+    <script src="scripts/services/services.js"></script>
+    <script src="scripts/routes.js"></script>
+
+    <!-- views下所有的控制器v -->
+    <script src="scripts/controllers/controllers.js"></script>
+    <!-- XX_Route.js -->
+    <script src="views/login/script/login-route.js"></script>
+    <script src="views/user/script/password-route.js"></script>
+
+    <!--百度地图-->
+    <!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=HGe2ZC7fuL3QPdpuNwLlmkpm" ></script>-->
+    <!--淘宝孔明锁-->
+    <script type = "text/javascript" src = "scripts/securesdk_v2.js" id = "J_secure_sdk_v2" data-appkey ="1021353585" ></script>
+    <!--消息提示指令-->
+    <toaster-container toaster-options="{'close-button': true,'time-out':3000}"></toaster-container>
+</body>
+</html>

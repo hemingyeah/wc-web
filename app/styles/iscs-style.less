@@ -1,0 +1,913 @@
+/*颜色定义*/
+@orange:#FF591F;
+@green : #16b267;
+@ash-e0 : #e0e0e0;
+@white : #FFF;
+@border-color-dc : #dcdcdc;
+@border-color-e6 : #e6e6e6;
+
+/*h页面全局TAB*/
+.iscs-nav-menus {
+    height: 40px;
+    position: fixed;
+    top: 68px;
+    width: 100%;
+    z-index: 997;
+    overflow: hidden;
+    background: @white;
+    border-bottom: @border-color-dc solid 1px;
+    > span.iscs-tabs-btn {
+        height: 40px;
+        width: 15px;
+        display: block;
+        text-align: center;
+        line-height: 40px;
+        color: #333;
+    }
+    > span.iscs-tabs-btn:hover {
+        background: @border-color-dc;
+        cursor: pointer;
+    }
+    .tab-show-one {
+        display: block !important;
+    }
+    .tab-hide-one {
+        display: none !important;
+    }
+}
+.tab-menu.nav-tabs {
+    float:left;
+    height: 40px;
+    overflow: hidden;
+}
+.tab-menu li {
+    color: #444;
+    margin-right: 2px;
+    button {
+        background: none;
+        border: 0;
+    }
+    .btn {
+        height: 40px;
+        border-radius:0;
+    }
+    .btn-info {
+        color: @orange !important;
+        border-bottom: @orange solid 3px !important;
+        font-weight: bold;
+    }
+    .btn-info:hover ,
+    .btn-info:visited ,
+    .btn-info:active ,
+    .btn-info:focus {
+        background: none !important;
+        border: 0;
+    }
+    .btn-default:hover {
+        color: @orange !important;
+        background: none !important;
+        border: 0;
+        font-weight: bold;
+        border-bottom: @orange solid 3px !important;
+    }
+    i {
+        position: absolute;
+        right:-2px;
+        top:14px;
+        display: none;
+        font-size:10px !important;
+        color: #ccc;
+    }
+}
+.tab-menu li:hover {
+    i {
+        display: block;
+    }
+    i:hover {
+        color: #444;
+    }
+}
+.min-menu { 
+    display: none;
+    width:50px;
+    height: 50px;
+    font-size: 30px;
+    float: left;
+    color: #FFF;
+    padding-top: 10px;
+}
+.min-menu-main {
+    width:20%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: none;
+    position: absolute;
+    z-index: 98999;
+    background: #666;
+    > ul{
+        display: block;
+        >li.iscs-min-menu {
+            width:100%;
+            height: auto;
+            min-height: 30px;
+            line-height: 30px;
+            >a {
+                display: block;
+                cursor: pointer;
+                width:100%;
+                min-height: 40px;
+                padding: 10px;
+                color: #FFF;
+            }
+            ul.nav-sub {
+               display: block;
+               height: auto;
+               li {
+                   position: static;
+                   a {
+                      padding: 5px 5px 5px 40px;
+                      position: static;
+                }
+            }
+        }
+  
+        }
+    }
+}
+
+.iscs-cropArea {
+    background: #E4E4E4;
+    overflow: hidden;
+    width:500px;
+    height:350px;
+}
+
+.iscs-table{
+	color: red !important;
+	background-color: #DEE5E7;
+}
+.GT-Must::before{
+    content: "*";
+    color:red;
+}
+
+.alert.ng-isolate-scope {
+    width: 320px;
+    position: absolute;
+    top:120px;
+    right: 50px;
+    z-index: 999966;
+    animation: myfirstalert .1s;
+    -moz-animation: myfirstalert .1s;	/* Firefox */
+    -webkit-animation: myfirstalert .1s;	/* Safari 和 Chrome */
+    -o-animation: myfirstalert .1s;	/* Opera */
+}
+@keyframes myfirstalert
+{
+0%   { top:0px;}
+100% { top:120px;}
+}
+
+@-moz-keyframes myfirstalert /* Firefox */
+{
+0%   { top:0px;}
+100% { top:120px;}
+}
+
+@-webkit-keyframes myfirstalert /* Safari 和 Chrome */
+{
+0%   { top:0px;}
+100% { top:120px;}
+}
+
+@-o-keyframes myfirstalert /* Opera */
+{
+0%   { top:0px;}
+100% { top:120px;}
+}
+.tab-content {
+    padding-top:10px;
+}
+.typeahead-demo .custom-popup-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    background-color: #f9f9f9;
+}
+
+.typeahead-demo .custom-popup-wrapper > .message {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    color: #868686;
+}
+
+.typeahead-demo .custom-popup-wrapper > .dropdown-menu {
+    position: static;
+    float: none;
+    display: block;
+    min-width: 160px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+.uploader {
+    position: relative;
+    width:100px;
+    height:32px;
+    line-height: 32px;
+    text-align: center;
+    color:@orange;
+    display: block;
+    background: @white;
+    overflow: hidden;
+    border:1px solid @border-color-dc;
+    input {
+        width:100px;
+        height:32px;
+        font-size: 100px;
+        overflow: hidden;
+        position: absolute;
+        display: block;
+        top:0;
+        left:0;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        background: #000;
+        cursor: pointer;
+    }
+}
+.uploader:hover {
+    color:#444;
+    background: #DFDFDF;
+    cursor: pointer;
+    text-decoration: none;
+} 
+// 首页菜单
+.menu-all {
+    float: left;
+    width:50px;
+    height: 45px;
+    display: block;
+    position: relative;
+    background: #A3ACC2;
+    cursor: pointer;
+    > i {
+        font-size: 22px;
+        margin: 12px 0 0 15px;
+    }
+}
+.menu-all-center {
+    text-align: left;
+    width:1000px;
+    height:600px;
+    position: absolute;
+    top:50px;
+    left: 0;
+    background:@white;
+    border: #ccc solid 1px;
+    border-radius: 3px;
+    color: #666;
+    transition: all linear 0.4s;
+    opacity: 1;
+}
+.ng-hide {
+  opacity: 0;
+}
+.menu-custom {
+    float: left;
+    height: 60px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding:10px 0 0 10px;
+    > div {
+        width:50px;
+        height: 50px;
+        padding:5px 5px 0 5px;
+        line-height: 18px;
+        color:#fff;
+        overflow: hidden;
+        display: table-cell;
+        text-align: center;
+        vertical-align:middle;
+    }
+    > div:hover {
+        color: #444;
+        background: #efefef;
+    }
+}
+.menu-custom-add {
+    float: left;
+    width:50px;
+    height: 50px;
+    display: block;
+    position: relative;
+    color: @white;
+    font-size: 22px;
+    padding: 10px 0 0 15px;
+    background: #EA5D36;
+    // background: #4E5C95;
+    margin: 10px 0 0 10px;
+    cursor: pointer;
+    i:hover {
+        color: #ccc;
+    }
+}
+.menu-custom-showLevel {
+    float: left;
+    width:12px;
+    height: 44px;
+    display: block;
+    position: relative;
+    font-size: 14px;
+    padding: 10px 0 0 3px;
+    margin-top: 12px;
+    cursor: pointer;
+    background: #EA5D36;
+    // background: #363E5F;
+    color: @white;
+}
+.menu-add-all li {
+    width:120px;
+    padding:5px;
+    margin: 5px;
+    cursor: pointer;
+    border: #23b7e5 solid 2px;
+}
+.selected-view {
+    padding: 90px 80px;
+}
+
+/*页面*/
+.iscs-view-btn {
+    float: left;
+    font-size: 14px;
+    width: 30px;
+    height: 34px;
+    padding: 9px 0 0 5px;
+    cursor: pointer;
+}
+.iscs-view-btn:hover {
+    color: #23b7e5;
+}
+.iscs-view-right {
+    margin-left: 210px;
+}
+.iscs-view-left {
+    width:210px;
+    height: auto;
+    position: fixed;
+    top: 108px;
+    left: 0;
+    bottom:0;
+    z-index:1;
+    .iscs-view-left-center {
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        background: #EAEDF1;
+    }
+    .input-group {
+        position:static;
+        .btn {
+            border-radius:0;
+            font-size: 12.5px;
+            border-color: @border-color-dc;
+            border-left:0;
+            background: @white;
+        }
+        .btn:hover ,.btn:visited .btn:active {
+            background: @white;
+        }
+    }
+    .iscs-icon-date-btn {
+        padding: 2px 6px;
+    }
+    .iscs-seach-forward {
+        float:right;
+        width: 36px;
+        a {
+            width: 14px;
+            height: 20px;
+            display: inline-block;
+            background: #999;
+            color: @white;
+            font-size: 12px;
+            padding-left: 5px;
+        }
+        a:hover {
+            background: #a0a0a0;
+        }
+        a:active {
+            background: #909090;
+        }
+    }
+    .form-group {
+        margin-bottom: 6px;
+    }
+    /* 修改placeholder */
+    ::-moz-placeholder {
+    font-size: 12px;
+    line-height: 22px;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+    font-size: 12px;
+    line-height: 22px;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+    font-size: 12px;
+    line-height: 22px;
+    }
+
+}
+//查询
+.seach-btn-main {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width:190px;
+    height: 40px;
+    padding-left: 10px;
+    padding-top: 5px;
+    background: #EAEDF1;
+    button {
+        float:left;
+    }
+    input {
+        float:right;
+        width: 60px;
+    }
+}
+.iscs-seach-id {
+    background: #E6E6E6;
+    .form-control {
+        float: left;
+        width:170px;
+    }
+    .input-group-btn {
+        position: relative;
+        z-index: 3;
+        left: -24px;
+        top:0px;
+    }
+    .btn-default {
+        color: #CCC;
+        padding: 4px 6px;
+        border: 0;
+        
+    }
+    .btn-default:hover {
+        color: #666;
+    }
+}
+
+/*进度条*/
+
+.dialog-progress {
+    width:870px;
+    display: table;
+}
+.ribbon {
+    display:inline-block;
+}
+.ribbon-let ,.ribbon-cen ,.ribbon-rht {
+    float: left;
+    width:205px;
+}
+.ribbon-cen ,.ribbon-rht {
+    position: relative;
+    margin-left: -39px;
+}
+/*left*/
+.ribbon-let .ribbon-center ,
+.ribbon-rht .ribbon-center ,
+.ribbon-cen .ribbon-center {
+    background: @ash-e0;
+    height: 36px;
+    line-height: 36px;
+    float:left;
+    width:125px;
+    text-align: center;
+    overflow: hidden;
+}
+.ribbon-let .ribbon-right:before ,.ribbon-let .ribbon-left:before ,
+.ribbon-cen .ribbon-left:before ,.ribbon-cen .ribbon-right:before ,
+.ribbon-rht .ribbon-left:before ,.ribbon-rht .ribbon-right:before  {
+    content: "";
+    float:left;
+    border:1.5em solid @ash-e0;
+}
+.ribbon-let .ribbon-right:before ,
+.ribbon-cen .ribbon-right:before {
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: @ash-e0;
+    border-right-color:transparent;
+}
+.ribbon-cen .ribbon-left:before ,
+.ribbon-rht .ribbon-left:before {
+    border-left-color: transparent;
+}
+
+/*active*/
+.ribbon-let.active .ribbon-center ,
+.ribbon-rht.active .ribbon-center ,
+.ribbon-cen.active .ribbon-center {
+    background-color: @green !important;
+    color: @white;
+}
+.ribbon-let.active .ribbon-right:before ,.ribbon-let.active .ribbon-left:before ,
+.ribbon-cen.active .ribbon-left:before ,.ribbon-cen.active .ribbon-right:before ,
+.ribbon-rht.active .ribbon-left:before ,.ribbon-rht.active .ribbon-right:before  {
+    border-color: @green;
+}
+.ribbon-let.active .ribbon-right:before ,
+.ribbon-cen.active .ribbon-right:before {
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: @green;
+    border-right-color:transparent;
+}
+.ribbon-cen.active .ribbon-left,
+.ribbon-rht.active .ribbon-left,
+.ribbon-cen.active .ribbon-left:before ,
+.ribbon-rht.active .ribbon-left:before {
+    border-left-color: transparent !important;
+}
+
+/*dialog-right-close*/
+.dialog-right-close {
+    position: absolute;
+    right:0px;
+    top:0px;
+    width:24px;
+    height:24px;
+    padding: 4px 0 0 7px;
+    color: #666;
+    display: block;
+    cursor: pointer;
+}
+.dialog-right-close:hover {
+    background: @orange;
+    color: @white;
+}
+.iscs-border-dotted {
+    border: 1px dashed #dcdcdc;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+}
+
+/*page*/
+.max-text-p650  {
+    width: 650px ;
+    line-height: 18px;
+    word-wrap: break-word; 
+    word-break: normal; 
+}
+.text-bgcolor-especially {
+    border: 1px solid @border-color-e6;
+    background: #f6f6f6;
+}
+.iscs-table-tab .nav-tabs {
+    background: #ededed;
+    border-bottom: 0; 
+    a {
+        color: #666;
+        border: 0;
+    }
+    a:hover {
+        color: #444;
+    }
+    
+    >li>a {
+        padding: 15px;
+        border-bottom: 0; 
+    }
+    >li>a:hover {
+        background: #fff;
+    }
+    >li.active>a {
+        border: 0;
+    }
+}
+
+.table-commodity-list {
+    padding: 20px 0;
+    border-bottom: 1px solid @border-color-e6;
+    display: table;
+    width: 100%;
+    font-size: 12px;
+    > div {
+        float:left;
+    }
+    img {
+        border: 1px solid @border-color-e6;
+    }
+    .overflow-ellipsis {
+        height: 42px;
+        overflow: hidden;
+    }
+}
+
+.dashboard-index {
+    overflow-y:auto;
+    width:100%; 
+}
+.express-set {
+    label {
+        border: @border-color-dc solid 1px;
+        height: 70px;
+        padding: 11px 20px;
+    }
+    .express-img ,.express-yuantong ,.express-shunfeng ,.express-zhongtong ,.express-shentong {
+        background: url(../images/expresspic.png) no-repeat;
+        width:120px;
+        height:50px;
+        display: block;
+    }
+    .express-yuantong {
+        background-position:-138px 0;
+    }
+    .express-shunfeng {
+        background-position:-400px 0;
+    }
+    .express-zhongtong {
+        background-position:0 0;
+    }
+    .express-shentong {
+        background-position:-274px 0;
+    }
+    .select-top {
+        margin-top: 8px;
+    }
+    span.fa {
+        opacity: 0;
+        font-size: 16px;
+    }
+    .express-active {
+        border: @orange solid 3px;
+        span.fa {
+            opacity: 1;
+        }
+        .select-top {
+            margin-top: 5px;
+        }
+    }
+}
+
+body #toast-container {
+    z-index: 999999 !important;
+}
+
+.iscs-icon ,.iscs-icon-date ,.iscs-icon-system ,.iscs-icon-basics ,.iscs-icon-purchase ,.iscs-icon-sale ,.iscs-icon-order ,
+.iscs-icon-quality ,.iscs-icon-stock ,.iscs-icon-transport ,.iscs-icon-receipt ,.iscs-icon-library ,.iscs-icon-bill ,
+.iscs-icon-deliver ,.iscs-icon-exceptions ,.iscs-icon-equipment ,.iscs-icon-monitor ,.iscs-table-details{
+    background: url(../images/icon/icon-menu.png) no-repeat;
+    width:26px;
+    height: 26px;
+    display: block;
+}
+//日期
+.iscs-icon-date {
+    background-position: -23px -113px;
+}
+
+// 系统 
+.iscs-icon-system {
+    background-position: 0 2px;
+}
+// 基础 
+.iscs-icon-basics {
+    background-position: -28px 2px;
+}
+
+// 采购 
+.iscs-icon-purchase {
+    background-position: -58px 2px;
+}
+
+// 营销 
+.iscs-icon-sale {
+    background-position: -88px 2px;
+}
+
+// 订单 
+.iscs-icon-order {
+    background-position: -118px 2px;
+}
+
+// 售后 
+.iscs-icon-quality {
+    background-position: -148px 2px;
+}
+
+// 库存 
+.iscs-icon-stock {
+    background-position: -178px 2px;
+}
+
+// 运输 
+.iscs-icon-transport {
+    background-position: -208px 2px;
+}
+
+// 收货 
+.iscs-icon-receipt {
+    background-position: 2px -28px;
+}
+
+// 在库 
+.iscs-icon-library {
+    background-position: -28px -28px;
+}
+
+// 单据 
+.iscs-icon-bill {
+    background-position: -58px -28px;
+}
+
+// 发货 
+.iscs-icon-deliver {
+    background-position: -88px -28px;
+}
+
+// 异常 
+.iscs-icon-exceptions {
+    background-position: -118px -28px;
+}
+
+// 设备 
+.iscs-icon-equipment {
+    background-position: -148px -28px;
+}
+ 
+// 监控 
+.iscs-icon-monitor {
+    background-position: -178px -28px;
+}
+
+
+.navi-wrap .nav > li.active {
+    .iscs-icon-system {
+        background-position: 0 -58px;
+    }
+    .iscs-icon-basics {
+        background-position: -28px -58px;
+    }
+        
+    // 采购 
+    .iscs-icon-purchase {
+        background-position: -58px -58px;
+    }
+
+    // 营销 
+    .iscs-icon-sale {
+        background-position: -88px -58px;
+    }
+
+    // 订单 
+    .iscs-icon-order {
+        background-position: -118px -58px;
+    }
+
+    // 售后 
+    .iscs-icon-quality {
+        background-position: -148px -58px;
+    }
+
+    // 库存 
+    .iscs-icon-stock {
+        background-position: -178px -58px;
+    }
+
+    // 运输 
+    .iscs-icon-transport {
+        background-position: -208px -58px;
+    }
+
+    // 收货 
+    .iscs-icon-receipt {
+        background-position: 2px -88px;
+    }
+
+    // 在库 
+    .iscs-icon-library {
+        background-position: -28px -88px;
+    }
+
+    // 单据 
+    .iscs-icon-bill {
+        background-position: -58px -88px;
+    }
+
+    // 发货 
+    .iscs-icon-deliver {
+        background-position: -88px -88px;
+    }
+
+    // 异常 
+    .iscs-icon-exceptions {
+        background-position: -118px -88px;
+    }
+
+    // 设备 
+    .iscs-icon-equipment {
+        background-position: -148px -88px;
+    }
+    
+    // 监控 
+    .iscs-icon-monitor {
+        background-position: -178px -88px;
+    }
+}
+
+
+.iscs-icon-add {
+    background: url("../images/icon_add.png");
+    height: 60px;
+    width: 60px;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.forecast-border-dashed {
+    border: 1px dashed #dcdcdc;
+    border-radius:4px;
+    height:260px;
+    padding-top: 80px;
+}
+
+.forecast-border-solid {
+    border:1px #dcdcdc solid;
+    border-radius: 4px;
+    height: 260px;
+}
+
+.forecast-hr {
+    border: 1px dashed;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.forecast-details {
+    border: 1px #ececec solid;
+    border-style:solid solid none none;
+    padding: 13px;
+}
+
+.forecast-delete {
+    border: 1px #ececec solid;
+    border-style: solid none none;
+    padding: 13px;
+}
+
+.forecast-unchecked {
+    color: #f55044;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.forecast-checked {
+    color: #16b267;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.forecast-expire {
+    color: #B9B9B9;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.echarts{
+    padding: 0px;
+    height: 100%;
+   //border: dashed 1px darkblue;
+}
+
+.themes{
+    padding: 0px;
+    border: dashed 1px darkblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

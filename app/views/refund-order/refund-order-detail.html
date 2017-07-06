@@ -1,0 +1,104 @@
+<panel dialog>
+    <pbody>
+        <uib-tabset class="iscs-table-tab" active="activeForm">
+            <uib-tab index="0" heading="{{ 'order.information.refund' | translate }}"><!-- 退款单详情 -->
+                <div class="div-center mrg20T dialog-progress">
+                    <div class="ribbon-let active width-280">
+                        <div class="ribbon-left"></div>
+                        <div class="ribbon-center width-200 text-center">1-{{ 'state.pending' | translate }}</div><!-- 待处理 -->
+                        <div class="ribbon-right"></div>
+                    </div>
+                    <div class="ribbon-cen  width-280">
+                        <div class="ribbon-left"></div>
+                        <div class="ribbon-center width-200 text-center">2-{{ 'state.alreadyProcessed' | translate }}</div><!-- 已处理 -->
+                        <div class="ribbon-right"></div>
+                    </div>
+                    <div class="ribbon-rht  width-280">
+                        <div class="ribbon-left"></div>
+                        <div class="ribbon-center width-200  text-center">3-{{ 'state.finishedProcessing' | translate }}</div><!-- 处理完成 -->
+                        <div class="ribbon-right"></div>
+                    </div> 
+                </div>
+                <div class="display-table">
+                    <div class="col-md-12 font-size-14 mrg10T line-height28">
+                        <strong>{{ 'base.productDetail' | translate }}</strong><!-- 商品详情 -->
+                    </div>
+                    <div class="pull-left">
+                        <div class="table-commodity-list">
+                            <div class=" min-height60"><img src="images/a0.jpg" width="58" height="58" /></div>
+                            <div class=" min-height60 pad10L" style="width:415px;">
+                                <p class="overflow-ellipsis" ng-bind="refundOrderDetail.productName"></p>
+                                <p class="color-8c">
+                                    <span>{{ 'order.information.specifications' | translate }}：红色</span><!-- 规格 -->
+                                    <span class="pad10L">{{ 'order.information.specificationsId' | translate }}：</span><!-- 规格ID --><span class="color-444" ng-bind="refundOrderDetail.skuNumId"></span>
+                                    <span class="pad10L">{{ 'order.information.numberId' | translate }}：</span><!-- 数字ID -->
+                                    <span class="color-444" ng-bind="refundOrderDetail.skuNumId"></span>
+                                </p>
+                            </div>
+                            <div class=" min-height60 width-150 mrg10L">
+                                <p><span class="color-8c">{{ 'order.amount.transactionAmount' | translate }}：</span><!-- 交易金额 --><span class="color-444" ng-bind="refundOrderDetail.orderPayment"></span>
+                                    </br>
+                                    <span class="color-8c">{{ 'order.amount.buyersPaid' | translate }}：55</span><!-- 卖家支付金额 --><span class="color-444" ng-binid="refundOrderDetail"></span>
+                                </p>
+                            </div>
+                            <div class=" min-height60 width-120 mrg10L">
+                                <p><span>{{ 'base.amount.freight' | translate }}：108.00</span><!-- 运费 --></br>
+                                    <span>{{ 'order.amount.refundAmount' | translate }}：<strong class="color-orange" ng-bind="refundOrderDetail.refundFee"></strong></span><!-- 退款金额 -->
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="display-table mrg10T pad10T line-height28">
+                    <div class="col-md-12 font-size-14">
+                        <strong>{{ 'order.information.refund' | translate }}</strong><!-- 退款详情 -->
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">{{ 'order.type.afferSales' | translate}}：</span><span class="color-444">2015-05-05 80:30</span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c width-60 text-right display-inlineblock">{{ 'base.shop' | translate }}：</span><!-- 店铺 --><span class="color-444">2015-05-05 80:30</span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">{{ 'order.refundReason' | translate }}：</span><!-- 退款原因 --><span class="color-444" ng-bind="refundOrderDetail.returnReason"></span>
+                    </div>
+                    <div class="col-md-12 ">
+                        <span class="color-8c pull-left">{{ 'order.refundExplanation' | translate }}：</span><!-- 退款说明 -->
+                        <p class="color-444 pull-left mrg5T max-text-p650 ">环保部与江苏省政府组成的联合调查组抵达江苏常州，并于下午1点在常州市外家长正在检查学生的体检报告.江苏省政府组成的联合调查组抵达江苏常州，并于下午1点在常州市外家长正在检查学生的体检报</p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">{{ 'order.name.buyersNickname' | translate }}：</span><!-- 买家昵称 --><span class="color-444" ng-bind="refundOrderDetail.buyerNick"></span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c width-60 text-right display-inlineblock">{{ 'base.phone' | translate }}：</span><!-- 手机 --><span class="color-444">2015-05-05 80:30</span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">{{ 'order.name.buyersName' | translate }}：</span><!-- 买家姓名 --><span class="color-444">2015-05-05 80:30</span>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="color-8c">{{ 'order.time.applyRefund' | translate }}：</span><!-- 申请时间 --><span class="color-444" ng-bind="refundOrderDetail.refundCreateTime"></span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">{{ 'order.time.check' | translate }}：</span><!-- 审核时间 --><span class="color-444">2015-05-05 80:30</span>
+                    </div>
+                    <div class="col-md-4 ">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">{{ 'order.time.download' | translate }}：</span><!-- 下载时间 --><span class="color-444" ng-bind="refundOrderDetail.downTime"></span>
+                    </div>
+                    <div class="col-md-4 ">
+                        <span class="color-8c">{{ 'order.time.update' | translate }}：</span><!-- 更新时间 --><span class="color-444" ng-bind="refundOrderDetail.modifyTime"></span>
+                    </div>
+                    <div class="col-md-4 ">
+                        &nbsp;
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab index="1" heading="{{ 'base.operationRecord' | translate }}"><!-- 操作记录 -->
+                <iscs-grid grid-config="gridOptions" grid-class="auto-height-modal-table" check-box="false"></iscs-grid>
+            </uib-tab>
+        </uib-tabset>
+        <div class="dialog-right-close" ng-click="event.close()"><i class="fa fa-times"></i></div>
+    </pbody>
+</panel>

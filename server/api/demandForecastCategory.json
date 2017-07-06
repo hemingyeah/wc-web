@@ -1,0 +1,14 @@
+{
+    "comments": "仓库需求预测新增页面品类下拉框数据源",
+    "code": "0",
+
+    "data": [{
+        "name": "服装",
+        "code": "yhhhrr"
+    }, {
+        "name": "3C",
+        "code": "yhhhnjj"
+    }],
+
+    "msg": ""
+}

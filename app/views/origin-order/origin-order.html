@@ -1,0 +1,102 @@
+<div class="iscs-view-left" ng-hide="viewLeft">
+    <div class="iscs-view-left-center">
+        <div class="pad10A iscs-seach-id">
+            <div class="input-group">
+                <input type="text" ng-model="query.mix" class="form-control" placeholder="{{ 'order.number.order' | translate }}/{{ 'order.name.consignee' | translate }}" /><!-- 交易号/收货人 -->
+                <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="event.quickSearch()"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="pad10A pad30B">
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                     {{ 'order.name.consignor' | translate }}
+                </div><!-- 发货人 -->
+                <input type="text" ng-model="query.receiverName" class="form-control" placeholder="{{ 'order.name.consignor' | translate }}" />
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    {{ 'order.phone.consignor' | translate }}
+                </div><!-- 发货人手机号 -->
+                <input type="text" ng-model="query.receiverMobile" class="form-control" placeholder="{{ 'order.phone.consignor' | translate }}" />
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    {{ 'order.time.order' | translate }}
+                </div><!-- 下单时间 -->
+                <div class="input-group mrg5B" datepick>
+                    <adm-dtp ng-model='query.orderCreateTimeFrom' full-data="date11_detail" maxdate="{{date12_detail.unix}}"></adm-dtp>
+                </div>
+                <div class="input-group" datepick>
+                    <adm-dtp ng-model='query.orderCreateTimeTo' full-data="date12_detail" mindate="{{date11_detail.unix}}"></adm-dtp>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    {{ 'order.time.payment' | translate }}
+                </div><!-- 付款时间 -->
+                <div class="input-group mrg5B" datepick>
+                    <adm-dtp ng-model='query.orderPayTimeFrom' full-data="date13_detail" maxdate="{{date14_detail.unix}}"></adm-dtp>
+                </div>
+                <div class="input-group" datepick>
+                    <adm-dtp ng-model='query.orderPayTimeTo' full-data="date14_detail" mindate="{{date13_detail.unix}}"></adm-dtp>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    {{ 'base.shop' | translate }}
+                </div><!-- 店铺 -->
+                <input type="text" ng-model="query.shopId" class="form-control" placeholder="{{ 'base.shop' | translate }}" />
+            </div>
+            <div class="form-group">
+                <div class="color-666 pad3L line-height24 font-size-12">
+                    {{ 'order.state' | translate }}
+                </div><!-- 订单状态 -->
+                <div class="pad10A bg-white boder-all">
+                    <p>
+                        <label class="checkbox-inline c-checkbox">
+                            <input type="checkbox" value="option2">
+                            <span class="fa fa-check"></span> {{ 'state.pendingaudit' | translate }}
+                        </label><!-- 待审核 -->
+                    </p>
+                    <p class="mrg5T">
+                        <label class="checkbox-inline c-checkbox">
+                            <input type="checkbox" value="option2">
+                            <span class="fa fa-check"></span> {{ 'state.auditWaiterPending' | translate }}
+                        </label><!-- 等待客服审核 -->
+                    </p>
+                    <p class="mrg5T">
+                        <label class="checkbox-inline c-checkbox">
+                            <input type="checkbox" value="option2">
+                            <span class="fa fa-check"></span> {{ 'state.auditFinancePending' | translate }}
+                        </label><!-- 等待财务审核 -->
+                    </p>
+                    <p class="mrg5T">
+                        <label class="checkbox-inline c-checkbox">
+                            <input type="checkbox" value="option2">
+                            <span class="fa fa-check"></span> {{ 'state.auditExpressPending' | translate }}
+                        </label><!-- 等待快递审核 -->
+                    </p>
+                    <p class="mrg5T">
+                        <label class="checkbox-inline c-checkbox">
+                            <input type="checkbox" value="option2">
+                            <span class="fa fa-check"></span> {{ 'state.hadBeenShipped' | translate }}
+                        </label><!-- 已发货 -->
+                    </p>
+                </div>
+            </div>
+            <div class="seach-btn-main">
+                <button type="submit" class="btn btn-warning" ng-click="event.search($scope)">{{ 'base.search' | translate }}</button><!-- 查询 -->
+                <input type="submit" class="btn btn-info" value="{{ 'base.save' | translate }}" ng-click="event.search($scope)"><!-- 保存 -->
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-class="{true: 'iscs-view-right', false: 'mrg0L'}[viewRight]">
+    <div class="display-table mrg10B mrg10T">
+        <i class="iscs-view-btn fa " ng-class="{true: 'fa-dedent', false: 'fa-indent'}[viewIcon]" ng-click="searchToggle()"></i>
+        <iscs-button></iscs-button><!-- 按钮组 -->
+    </div>
+    <iscs-grid grid-config="gridOptions" grid-class="auto-height-table" no="false"></iscs-grid>
+</div>

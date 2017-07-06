@@ -1,0 +1,60 @@
+<div action="platformRefundAction" title="淘宝退款订单" style="height:380px" canclose="false" pageukid="1900102160002450" pagename="淘宝退款订单">
+    <div type="toolbar">
+        <ul>
+            <li id="toAllocation" title="手工分配" icon="appoint" event="click=toAllocation$click"></li>
+            <li id="synTaobaoStatus" title="从平台同步" icon="update" event="click=synTaobaoStatus$click"></li>
+        </ul>
+    </div>
+    <div id="taobaoRefundGrid" type="grid" edit="false" query="true" height="290" sort="created.desc" datefilter="downloadTime:30::usecount" event="loaddata=taobaoRefundGrid$loaddata,selectrow=taobaoRefundGrid$selectrow">
+        <ul>
+            <li name="refundId" display="退款单号" datatype="string"></li>
+            <li name="tid" display="淘宝交易单号" datatype="string"></li>
+            <li name="oid" display="子订单号" datatype="string"></li>
+            <li name="warehouseStatus" display="入库状态" datatype="code" codekey="WarehouseStatus"></li>
+            <li name="handleStatus" display="处理状态" datatype="code" codekey="HandleStatus"></li>
+            <li name="handleUserName" display="处理人" datatype="string"></li>
+            <li name="handleDate" display="分配时间" datatype="datetime"></li>
+            <li name="shopId" display="店铺Id" datatype="string" width="80" butype="8"></li>
+            <li name="shopName" display="店铺" datatype="string" showtitle="true" issort="false" filter="false"></li>
+            <li name="buyerNick" display="买家昵称" datatype="string"></li>
+            <li name="sellerNick" display="卖家昵称" datatype="string"></li>
+            <li name="created" display="退款申请时间" datatype="datetime"></li>
+            <li name="modified" display="淘宝更新时间" datatype="datetime"></li>
+            <li name="downloadTime" display="下载时间" datatype="datetime"></li>
+            <li name="updateTime" display="网仓更新时间" datatype="datetime"></li>
+            <li name="goodReturnTime" display="退货时间" datatype="string"></li>
+            <li name="orderStatus" display="订单交易状态" datatype="code" codekey="TaobaoTradeStatus"></li>
+            <li name="status" display="退款状态" datatype="code" codekey="TaobaoRefundStatus"></li>
+            <li name="hasGoodReturn" display="买家是否需要退货" datatype="code" codekey="YesOrNo"></li>
+            <li name="goodStatus" display="货物状态" datatype="string"></li>
+            <li name="totalFee" display="交易总金额" datatype="string"></li>
+            <li name="refundFee" display="退还金额" datatype="string"></li>
+            <li name="payment" display="支付给卖家的金额" datatype="string"></li>
+            <li name="alipayNo" display="支付宝交易号" datatype="string"></li>
+            <li name="shippingType" display="物流方式" datatype="string"></li>
+            <li name="companyName" display="物流公司名称" datatype="string"></li>
+            <li name="sid" display="退货运单号" datatype="string"></li>
+            <li name="reason" display="退款原因" datatype="string"></li>
+            <li name="reasonDesc" display="退款说明" datatype="string"></li>
+            <li name="num" display="商品购买数量" datatype="string"></li>
+            <li name="title" display="商品名称" datatype="string" showtitle="true"></li>
+            <li name="address" display="卖家收货地址" datatype="string"></li>
+            <li name="numIid" display="商品数字编号" datatype="string"></li>
+            <li name="spendTime" display="完成时长(小时)" datatype="string"></li>
+            <li name="prime" display="专享服务" datatype="code" codekey="YesOrNo"></li>
+        </ul>
+    </div>
+    <div type="tab">
+        <div title="操作记录" canclose="false">
+            <div id="operationLogGrid" type="grid" edit="false" filter="false" usepager="false" height="150" delayload="true" sort="logDate.asc" event="loaddata=operationLogGrid$loaddata">
+                <ul>
+                    <li name="operationName" display="操作名称" datatype="string"></li>
+                    <li name="logUserId" display="操作人ID" datatype="string"></li>
+                    <li name="logUserName" display="操作人" datatype="string"></li>
+                    <li name="logDate" display="操作时间" datatype="datetime"></li>
+                    <li name="logRemark" display="备注" datatype="string" width="400" showtitle="true"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

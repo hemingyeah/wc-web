@@ -1,0 +1,24 @@
+<panel dialog>
+		<phead>{{ 'order.time.payment' | translate }}</phead><!-- 付款时间 -->
+    <pbody>
+        <div class="display-table pad10A">
+            <div class="mrg10T line-height28">
+                <span class="color-8c">{{ 'order.time.order' | translate }}：</span><!-- 下单时间 --><span class="color-444" ng-bind="model.orderCreateTime"></span>
+            </div>
+            <div class="mrg10T line-height28">
+                <span class="color-8c">{{ 'order.time.payment' | translate }}：</span><!-- 付款时间 --><span class="color-444" ng-bind="model.orderPayTime"></span>
+            </div>
+            <div class="mrg10T line-height28">
+                <span class="color-8c">{{ 'order.time.download' | translate }}：</span><!-- 下载时间 --><span class="color-444" ng-bind="model.downTime"></span>
+            </div>
+            <div class="mrg10T line-height28">
+                <span class="color-8c">{{ 'order.time.formally' | translate }}：</span><!-- 转正时间 --><span class="color-444" ng-bind="model.releaseTime"></span>
+            </div>
+        </div>
+    </pbody>
+    <pfoot>
+        <div style="height: 40px;" class="text-center">
+        	<button class="btn btn-default" ng-click="event.close()">{{ 'base.close' | translate }}</button><!-- 关闭 -->
+        </div>
+    </pfoot>
+</panel> 

@@ -1,0 +1,53 @@
+{
+    "comment":"原始订单列表页模拟数据",
+    "code":"0",
+    "msg":"",
+    "data":{
+        "pageNum":1,
+        "currentPage":1,
+        "allNum":10,
+        "pageSize":1,
+        "contentList":[
+            {
+                "tradeUkid":111564100000013003,
+                "sourceOrderId":"",
+                "shopId":10,
+                "downTime":"2016-04-13 14:40:07",
+                "modifyTime":"2016-04-13 14:40:07",
+                "releaseTime":"",
+                "originTradeStatus":100,
+                "itemList":"",
+                "orderId":"10027064534",
+                "platformId":"",
+                "stockId":"",
+                "targetOrderUkid":"",
+                "content":"",
+                "storeCode":"",
+                "orderType":"",
+                "platformOrderStatus":"20",
+                "isFullFields":"",
+                "placeOrderStatus":"",
+                "orderCreateTime":"2016-04-05 16:00:35",
+                "orderPayTime":"",
+                "totalFee":49.5,
+                "orderSellerFee":"",
+                "orderPayment":"",
+                "freightFee":"",
+                "discountFee":"",
+                "buyerNick":"jianglixiao2008@163.com",
+                "receiverName":"",
+                "receiverMobile":"",
+                "receiverPhone":"",
+                "receiverState":"浙江省",
+                "receiverCity":"宁波市",
+                "receiverCounty":"慈溪市",
+                "receiverZip":"",
+                "receiverAddress":"",
+                "isCod":"",
+                "buyerMessage":"",
+                "sellerMemo":"",
+                "releaseDate":""
+            }
+        ]
+    }
+}
